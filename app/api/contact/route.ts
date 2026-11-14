@@ -3,6 +3,7 @@ import { connectToDatabase } from '@/lib/db';
 import ContactEnquiry from '@/lib/models/ContactEnquiry';
 import { checkRateLimit } from '@/lib/rateLimit';
 import { validateContactSubmission } from '@/lib/validation';
+import { sendContactNotificationEmail } from '@/lib/email';
 
 export async function POST(request: NextRequest) {
   try {
@@ -70,11 +71,24 @@ export async function POST(request: NextRequest) {
       }
     }
 
+    const referenceId = savedRecord?._id ? String(savedRecord._id) : `GP-${Date.now().toString().slice(-6)}`;
+
+    // 4. Send Email Notification to official inbox (contact@gopartnerlogistics.in)
+    try {
+      await sendContactNotificationEmail({
+        ...validation.sanitized,
+        referenceId,
+        ipAddress: ip,
+      });
+    } catch (mailErr) {
+      console.warn('Email dispatch warning (enquiry safely saved in DB):', mailErr);
+    }
+
     return NextResponse.json(
       {
         success: true,
         message: 'Thank you! Your enquiry has been received. Our team will contact you shortly.',
-        referenceId: savedRecord?._id || `GP-${Date.now().toString().slice(-6)}`,
+        referenceId,
       },
       {
         status: 201,

@@ -3,9 +3,28 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { Download, HelpCircle, ArrowRight, CheckCircle2, AlertTriangle, Truck, Ban, IndianRupee, Scale, Shield, FileText, RefreshCw } from 'lucide-react';
+import { getBreadcrumbSchema } from '@/lib/seo';
+import { SITE_URL, WHATSAPP_PHONE, WHATSAPP_URL } from '@/lib/site';
 
 export default function TermsAndConditionsPage() {
   const [downloadSuccess, setDownloadSuccess] = useState(false);
+
+  const breadcrumbJsonLd = getBreadcrumbSchema([
+    { name: 'Home', path: '/' },
+    { name: 'Terms & Conditions', path: '/terms-and-conditions' },
+  ]);
+
+  const webPageJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: 'GO-PARTNER Terms and Conditions',
+    url: `${SITE_URL}/terms-and-conditions`,
+    description:
+      'GO-PARTNER Terms and Conditions, Commercial Transportation Agreement, and Intermediary Guidelines under the Information Technology Act 2000.',
+    publisher: {
+      '@id': `${SITE_URL}/#organization`,
+    },
+  };
 
   const handleDownload = () => {
     const content = `GO PARTNER - TERMS OF SERVICE (TERMS & CONDITIONS)
@@ -64,6 +83,14 @@ Visit https://gopartner.in/terms for the latest version of this document.`;
 
   return (
     <div className="w-full flex flex-col bg-brand-light-bg/40">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageJsonLd) }}
+      />
 
       {/* HERO HEADER */}
       <section className="bg-white border-b border-slate-200 py-10 lg:py-14">
@@ -71,16 +98,16 @@ Visit https://gopartner.in/terms for the latest version of this document.`;
           <nav className="flex items-center space-x-2 text-xs text-slate-500 mb-3" aria-label="Breadcrumb">
             <Link href="/" className="hover:text-brand-navy">Home</Link>
             <span>/</span>
-            <span className="text-slate-800 font-medium">Legal</span>
+            <span className="text-slate-800 font-medium">Terms &amp; Conditions</span>
           </nav>
 
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
             <div>
               <h1 className="text-3xl sm:text-4xl font-black text-brand-navy font-heading tracking-tight">
-                Legal &amp; Compliance
+                Terms &amp; Conditions
               </h1>
               <p className="text-sm sm:text-base text-slate-600 mt-1">
-                Transparency builds stronger partnerships.
+                Transparency builds stronger partnerships. Commercial transportation agreement.
               </p>
             </div>
 
@@ -365,15 +392,26 @@ Visit https://gopartner.in/terms for the latest version of this document.`;
                 <div className="bg-slate-50 p-4 rounded-md border border-slate-200 text-xs space-y-1.5">
                   <p className="font-bold text-brand-navy">GO PARTNER Legal &amp; Operations</p>
                   <p>
-                    <span className="text-slate-500 font-medium">Support: </span>
-                    <a href="mailto:support@gopartner.in" className="text-brand-orange underline underline-offset-2">
-                      support@gopartner.in
+                    <span className="text-slate-500 font-medium">Email: </span>
+                    <a href="mailto:contact@gopartnerlogistics.in" className="text-brand-orange underline underline-offset-2">
+                      contact@gopartnerlogistics.in
                     </a>
                   </p>
                   <p>
                     <span className="text-slate-500 font-medium">Helpline: </span>
-                    <a href="tel:+919820011223" className="text-brand-navy font-semibold">
-                      +91 98200 11223
+                    <a href="tel:+918169724736" className="text-brand-navy font-semibold">
+                      +91 81697 24736
+                    </a>
+                  </p>
+                  <p>
+                    <span className="text-slate-500 font-medium">WhatsApp Support: </span>
+                    <a
+                      href={WHATSAPP_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-emerald-700 underline underline-offset-2 font-semibold"
+                    >
+                      {WHATSAPP_PHONE} (Message Only)
                     </a>
                   </p>
                   <p>

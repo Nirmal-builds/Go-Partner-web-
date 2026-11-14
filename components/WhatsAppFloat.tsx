@@ -1,23 +1,20 @@
 'use client';
 
 import { useState } from 'react';
-
-// Official WhatsApp helpline
-const WHATSAPP_NUMBER = '919820011223';
-const WHATSAPP_MESSAGE = 'Hello GO PARTNER! I would like to enquire about goods and freight transportation services.';
+import { trackWhatsAppClick } from '@/lib/analytics';
+import { WHATSAPP_URL } from '@/lib/site';
 
 export default function WhatsAppFloat() {
   const [hovered, setHovered] = useState(false);
 
-  const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
-
   return (
     <a
-      href={whatsappUrl}
+      href={WHATSAPP_URL}
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat with us on WhatsApp"
       className="fixed bottom-20 right-8 sm:right-10 z-50 group flex items-center gap-3"
+      onClick={() => trackWhatsAppClick('floating_button')}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >

@@ -13,7 +13,7 @@ import {
   RefreshCw,
 } from 'lucide-react';
 import Logo from './Logo';
-import { GOOGLE_PLAY_URL } from '@/lib/site';
+import { GOOGLE_PLAY_URL, CONTACT_PHONE, CONTACT_PHONE_RAW } from '@/lib/site';
 
 interface NavItem {
   name: string;
@@ -100,7 +100,7 @@ export default function Navbar() {
             {/* Direct Link to Legal Policies (Single Click Navigation, No Hover Effect) */}
             <Link
               href="/privacy-policy"
-              className={`inline-flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1.5 rounded-md border transition-all whitespace-nowrap cursor-pointer ${
+              className={`inline-flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1.5 rounded-md border whitespace-nowrap cursor-pointer btn-interactive ${
                 isLegalActive
                   ? 'bg-brand-navy text-white border-brand-navy shadow-xs'
                   : 'text-slate-700 hover:text-brand-navy hover:bg-slate-100 border-slate-200'
@@ -112,19 +112,20 @@ export default function Navbar() {
             </Link>
 
             <a
-              href="tel:+919820011223"
-              className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-700 hover:text-brand-navy px-2 py-1.5 rounded-md hover:bg-slate-100 transition-colors whitespace-nowrap"
+              href={`tel:${CONTACT_PHONE_RAW}`}
+              className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-700 hover:text-brand-navy px-2 py-1.5 rounded-md hover:bg-slate-100 transition-colors whitespace-nowrap btn-interactive"
               title="Call 24/7 Logistics Dispatch"
             >
               <PhoneCall className="w-3.5 h-3.5 text-brand-orange" />
-              <span>+91 98200 11223</span>
+              <span>{CONTACT_PHONE}</span>
             </a>
 
+            {/* Get the App CTA (Official URL commented out in lib/site.ts until launch) */}
             <a
               href={GOOGLE_PLAY_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-3.5 py-2 bg-brand-orange hover:bg-brand-orange-hover text-white text-xs font-bold uppercase tracking-wider rounded-md shadow-xs transition-all hover:shadow-sm whitespace-nowrap"
+              {...(GOOGLE_PLAY_URL !== '#' ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+              className="inline-flex items-center justify-center gap-2 px-3.5 py-2 bg-brand-orange hover:bg-brand-orange-hover text-white text-xs font-bold uppercase tracking-wider rounded-md shadow-xs btn-interactive whitespace-nowrap"
+              title="Official GO-PARTNER Android App (Coming Soon on Google Play)"
             >
               <Smartphone className="w-3.5 h-3.5" />
               <span>Get the App</span>
@@ -135,9 +136,9 @@ export default function Navbar() {
           <div className="flex lg:hidden items-center gap-2">
             <a
               href={GOOGLE_PLAY_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+              {...(GOOGLE_PLAY_URL !== '#' ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
               className="px-2.5 py-1.5 bg-brand-orange text-white text-xs font-bold rounded-md"
+              title="Coming Soon on Google Play"
             >
               App
             </a>
@@ -217,18 +218,18 @@ export default function Navbar() {
 
             <div className="pt-3 border-t border-slate-100 flex flex-col gap-2">
               <a
-                href="tel:+919820011223"
+                href={`tel:${CONTACT_PHONE_RAW}`}
                 className="inline-flex items-center gap-2 px-3 py-2 text-sm text-slate-700 hover:text-brand-navy"
               >
                 <PhoneCall className="w-4 h-4 text-brand-orange" />
-                <span>24/7 Support: +91 98200 11223</span>
+                <span>24/7 Support: {CONTACT_PHONE}</span>
               </a>
 
               <a
                 href={GOOGLE_PLAY_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+                {...(GOOGLE_PLAY_URL !== '#' ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                 className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-brand-orange hover:bg-brand-orange-hover text-white text-sm font-bold uppercase tracking-wider rounded-md transition-all shadow-xs"
+                title="Coming Soon on Google Play"
               >
                 <Smartphone className="w-4 h-4" />
                 <span>Get the App</span>

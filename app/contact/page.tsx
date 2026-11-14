@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import {
   Phone,
@@ -13,8 +13,49 @@ import {
   Loader2,
   ExternalLink,
 } from 'lucide-react';
+import { trackEnquirySubmission, trackWhatsAppClick, trackPhoneCall } from '@/lib/analytics';
+import { getBreadcrumbSchema } from '@/lib/seo';
+import {
+  SITE_URL,
+  CONTACT_PHONE,
+  CONTACT_PHONE_RAW,
+  CONTACT_EMAIL,
+  WHATSAPP_PHONE,
+  WHATSAPP_URL,
+  BUSINESS_ADDRESS,
+} from '@/lib/site';
+import ScrollReveal from '@/components/ScrollReveal';
+import { useDebounce } from '@/lib/hooks/useDebounce';
 
 export default function ContactPage() {
+  const breadcrumbJsonLd = getBreadcrumbSchema([
+    { name: 'Home', path: '/' },
+    { name: 'Contact Us', path: '/contact' },
+  ]);
+
+  const contactPageJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'ContactPage',
+    name: 'Contact GO-PARTNER Logistics',
+    url: `${SITE_URL}/contact`,
+    description:
+      'Contact GO-PARTNER for goods transportation, freight bookings, customer support, and commercial driver-partner enquiries across Mumbai MMR.',
+    mainEntity: {
+      '@type': 'LogisticsService',
+      name: 'GO-PARTNER',
+      telephone: CONTACT_PHONE,
+      email: CONTACT_EMAIL,
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: BUSINESS_ADDRESS.streetAddress,
+        addressLocality: BUSINESS_ADDRESS.addressLocality,
+        addressRegion: BUSINESS_ADDRESS.addressRegion,
+        postalCode: BUSINESS_ADDRESS.postalCode,
+        addressCountry: BUSINESS_ADDRESS.addressCountry,
+      },
+    },
+  };
+
   const [formData, setFormData] = useState({
     fullName: '',
     phoneNumber: '',
@@ -30,6 +71,22 @@ export default function ContactPage() {
     message: string;
   } | null>(null);
   const [serverError, setServerError] = useState('');
+
+  const debouncedFormData = useDebounce(formData, 400);
+
+  useEffect(() => {
+    // If the user already has validation errors showing, clear errors reactively once inputs are corrected
+    if (Object.keys(formErrors).length > 0) {
+      const updatedErrors = { ...formErrors };
+      if (debouncedFormData.fullName.trim().length >= 2) delete updatedErrors.fullName;
+      if (debouncedFormData.phoneNumber.replace(/[^0-9]/g, '').length >= 7) delete updatedErrors.phoneNumber;
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (emailRegex.test(debouncedFormData.emailAddress.trim())) delete updatedErrors.emailAddress;
+      if (debouncedFormData.subject) delete updatedErrors.subject;
+      if (debouncedFormData.message.trim().length >= 5 && debouncedFormData.message.length <= 1000) delete updatedErrors.message;
+      setFormErrors(updatedErrors);
+    }
+  }, [debouncedFormData]);
 
   const validateFrontend = () => {
     const errors: Record<string, string> = {};
@@ -94,6 +151,7 @@ export default function ContactPage() {
         referenceId: data.referenceId,
         message: data.message,
       });
+      trackEnquirySubmission(data.referenceId);
 
       setFormData({
         fullName: '',
@@ -112,12 +170,20 @@ export default function ContactPage() {
 
   return (
     <div className="w-full flex flex-col">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(contactPageJsonLd) }}
+      />
       {/* 1. HERO BANNER (Matching go_partner_ui_contact_us.jpg) */}
       <section className="bg-brand-navy text-white py-12 lg:py-16 border-b border-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             {/* Left Header Copy */}
-            <div className="lg:col-span-7 space-y-3">
+            <ScrollReveal direction="up" delay={0.04} distance={14} className="lg:col-span-7 space-y-3">
               <span className="text-xs font-bold uppercase tracking-widest text-brand-orange block">
                 Let&apos;s Move Your Business Forward
               </span>
@@ -128,10 +194,10 @@ export default function ContactPage() {
                 Have a question, a project in mind, or need logistics support? Our team is here to help.
                 Get in touch and we will respond as soon as possible.
               </p>
-            </div>
+            </ScrollReveal>
 
             {/* Right Container Ship & Truck Hero Image */}
-            <div className="lg:col-span-5">
+            <ScrollReveal direction="up" delay={0.14} distance={14} className="lg:col-span-5">
               <div className="relative rounded-lg overflow-hidden border border-slate-700 shadow-card bg-slate-900 group">
                 <div className="relative w-full h-[180px] sm:h-[220px]">
                   <Image
@@ -145,7 +211,7 @@ export default function ContactPage() {
                   <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/60 via-transparent to-transparent pointer-events-none" />
                 </div>
               </div>
-            </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>
@@ -155,7 +221,7 @@ export default function ContactPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
             {/* Left Column: Get in Touch (lg: 5 cols) */}
-            <div className="lg:col-span-5 space-y-8">
+            <ScrollReveal direction="left" delay={0.1} className="lg:col-span-5 space-y-8">
               <div>
                 <h2 className="text-2xl font-bold text-brand-navy font-heading mb-1">
                   Get in Touch
@@ -168,41 +234,42 @@ export default function ContactPage() {
               {/* 4 Contact Channels Grid */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {/* Phone Support */}
-                <div className="bg-white p-5 rounded-lg border border-slate-200 shadow-subtle flex flex-col justify-between">
+                <div className="bg-white p-5 rounded-lg border border-slate-200 shadow-subtle flex flex-col justify-between card-hover-effect">
                   <div>
                     <div className="w-10 h-10 rounded-md bg-blue-50 text-brand-blue flex items-center justify-center mb-3">
                       <Phone className="w-5 h-5" />
                     </div>
                     <h3 className="text-sm font-bold text-brand-navy">Phone Support</h3>
                     <a
-                      href="tel:+919820011223"
+                      href={`tel:${CONTACT_PHONE_RAW}`}
+                      onClick={() => trackPhoneCall('contact_page')}
                       className="text-xs font-semibold text-brand-orange hover:underline block mt-1"
                     >
-                      +91 98200 11223
+                      {CONTACT_PHONE}
                     </a>
                   </div>
                   <p className="text-[11px] text-slate-400 mt-2">Mon - Sat, 8:00 AM - 8:00 PM | 24/7 Dispatch</p>
                 </div>
 
                 {/* Email Support */}
-                <div className="bg-white p-5 rounded-lg border border-slate-200 shadow-subtle flex flex-col justify-between">
+                <div className="bg-white p-5 rounded-lg border border-slate-200 shadow-subtle flex flex-col justify-between card-hover-effect">
                   <div>
                     <div className="w-10 h-10 rounded-md bg-orange-50 text-brand-orange flex items-center justify-center mb-3">
                       <Mail className="w-5 h-5" />
                     </div>
                     <h3 className="text-sm font-bold text-brand-navy">Email Us</h3>
                     <a
-                      href="mailto:support@gopartner.in"
+                      href={`mailto:${CONTACT_EMAIL}`}
                       className="text-xs font-semibold text-brand-navy hover:text-brand-orange block mt-1"
                     >
-                      support@gopartner.in
+                      {CONTACT_EMAIL}
                     </a>
                   </div>
                   <p className="text-[11px] text-slate-400 mt-2">We typically respond within 24 hours.</p>
                 </div>
 
                 {/* Headquarters Address */}
-                <div className="bg-white p-5 rounded-lg border border-slate-200 shadow-subtle flex flex-col justify-between">
+                <div className="bg-white p-5 rounded-lg border border-slate-200 shadow-subtle flex flex-col justify-between card-hover-effect">
                   <div>
                     <div className="w-10 h-10 rounded-md bg-slate-100 text-brand-navy flex items-center justify-center mb-3">
                       <MapPin className="w-5 h-5" />
@@ -216,20 +283,22 @@ export default function ContactPage() {
                 </div>
 
                 {/* WhatsApp Quick Chat */}
-                <div className="bg-white p-5 rounded-lg border border-slate-200 shadow-subtle flex flex-col justify-between">
+                <div className="bg-white p-5 rounded-lg border border-slate-200 shadow-subtle flex flex-col justify-between card-hover-effect">
                   <div>
                     <div className="w-10 h-10 rounded-md bg-emerald-50 text-emerald-600 flex items-center justify-center mb-3">
                       <MessageSquare className="w-5 h-5" />
                     </div>
-                    <h3 className="text-sm font-bold text-brand-navy">WhatsApp Quick Chat</h3>
-                    <p className="text-xs text-slate-500 mt-1">Get instant assistance on WhatsApp.</p>
+                    <h3 className="text-sm font-bold text-brand-navy">WhatsApp Message Support</h3>
+                    <p className="text-xs font-semibold text-emerald-700 mt-0.5">{WHATSAPP_PHONE}</p>
+                    <p className="text-[11px] text-slate-500 mt-1">Message us directly for quick freight quotes and service queries.</p>
                   </div>
                   <div className="mt-3">
                     <a
-                      href="https://wa.me/919820011223?text=Hello%20GO%20PARTNER%20Logistics%20Team"
+                      href={WHATSAPP_URL}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold rounded-md transition-colors w-full justify-center"
+                      onClick={() => trackWhatsAppClick('contact_page')}
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold rounded-md transition-colors w-full justify-center btn-interactive"
                     >
                       <span>Chat on WhatsApp</span>
                       <ArrowRight className="w-3.5 h-3.5" />
@@ -272,10 +341,10 @@ export default function ContactPage() {
                   />
                 </div>
               </div>
-            </div>
+            </ScrollReveal>
 
             {/* Right Column: Send a Business Enquiry Form (lg: 7 cols) */}
-            <div className="lg:col-span-7">
+            <ScrollReveal direction="right" delay={0.15} className="lg:col-span-7">
               <div className="bg-white rounded-lg p-8 sm:p-10 border border-slate-200 shadow-card">
                 <div className="mb-6">
                   <h2 className="text-2xl font-bold text-brand-navy font-heading">
@@ -359,7 +428,7 @@ export default function ContactPage() {
                           id="phoneNumber"
                           name="phoneNumber"
                           required
-                          placeholder="+91 98200 11223"
+                          placeholder="+91 81697 24736"
                           value={formData.phoneNumber}
                           onChange={(e) =>
                             setFormData({ ...formData, phoneNumber: e.target.value })
@@ -503,7 +572,7 @@ export default function ContactPage() {
                   </form>
                 )}
               </div>
-            </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>

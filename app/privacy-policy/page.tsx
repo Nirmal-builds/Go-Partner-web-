@@ -3,9 +3,28 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { Download, HelpCircle, ArrowRight, CheckCircle2, Shield, MapPin, CreditCard, Smartphone, Server, UserCheck, FileText, RefreshCw } from 'lucide-react';
+import { getBreadcrumbSchema } from '@/lib/seo';
+import { SITE_URL, WHATSAPP_PHONE, WHATSAPP_URL } from '@/lib/site';
 
 export default function PrivacyPolicyPage() {
   const [downloadSuccess, setDownloadSuccess] = useState(false);
+
+  const breadcrumbJsonLd = getBreadcrumbSchema([
+    { name: 'Home', path: '/' },
+    { name: 'Privacy Policy', path: '/privacy-policy' },
+  ]);
+
+  const webPageJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: 'GO-PARTNER Privacy Policy',
+    url: `${SITE_URL}/privacy-policy`,
+    description:
+      'GO-PARTNER Privacy Policy and Data Protection standards under the Information Technology Act 2000.',
+    publisher: {
+      '@id': `${SITE_URL}/#organization`,
+    },
+  };
 
   const handleDownload = () => {
     const content = `GO PARTNER - PRIVACY POLICY
@@ -57,8 +76,8 @@ in-memory clusters with strict firewall isolation (UFW) and IP whitelisting.
 5. CONTACT INFORMATION & GRIEVANCE OFFICER
 In accordance with the Information Technology Act 2000:
 Grievance Officer: Compliance & Grievance Desk, GO PARTNER
-Email: support@gopartner.in / grievance@gopartner.in
-Helpline: +91 98200 11223
+Email: contact@gopartnerlogistics.in
+Helpline / WhatsApp: +91 81697 24736
 Jurisdiction: Mumbai, Maharashtra, India
 
 Visit https://gopartner.in/privacy-policy for the latest version of this document.`;
@@ -85,6 +104,14 @@ Visit https://gopartner.in/privacy-policy for the latest version of this documen
 
   return (
     <div className="w-full flex flex-col bg-brand-light-bg/40">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageJsonLd) }}
+      />
 
       {/* HERO HEADER */}
       <section className="bg-white border-b border-slate-200 py-10 lg:py-14">
@@ -92,16 +119,16 @@ Visit https://gopartner.in/privacy-policy for the latest version of this documen
           <nav className="flex items-center space-x-2 text-xs text-slate-500 mb-3" aria-label="Breadcrumb">
             <Link href="/" className="hover:text-brand-navy">Home</Link>
             <span>/</span>
-            <span className="text-slate-800 font-medium">Legal</span>
+            <span className="text-slate-800 font-medium">Privacy Policy</span>
           </nav>
 
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
             <div>
               <h1 className="text-3xl sm:text-4xl font-black text-brand-navy font-heading tracking-tight">
-                Legal &amp; Compliance
+                Privacy Policy
               </h1>
               <p className="text-sm sm:text-base text-slate-600 mt-1">
-                Transparency builds stronger partnerships.
+                Transparency builds stronger partnerships. Data privacy &amp; compliance standards.
               </p>
             </div>
 
@@ -451,21 +478,26 @@ Visit https://gopartner.in/privacy-policy for the latest version of this documen
                   <p className="text-slate-700 font-semibold">GO PARTNER</p>
                   <div className="pt-2 space-y-1.5">
                     <p>
-                      <span className="text-slate-500 font-medium">Support Email: </span>
-                      <a href="mailto:support@gopartner.in" className="text-brand-orange underline underline-offset-2">
-                        support@gopartner.in
-                      </a>
-                    </p>
-                    <p>
-                      <span className="text-slate-500 font-medium">Grievance Email: </span>
-                      <a href="mailto:grievance@gopartner.in" className="text-brand-orange underline underline-offset-2">
-                        grievance@gopartner.in
+                      <span className="text-slate-500 font-medium">Email: </span>
+                      <a href="mailto:contact@gopartnerlogistics.in" className="text-brand-orange underline underline-offset-2">
+                        contact@gopartnerlogistics.in
                       </a>
                     </p>
                     <p>
                       <span className="text-slate-500 font-medium">Helpline: </span>
-                      <a href="tel:+919820011223" className="text-brand-navy font-semibold">
-                        +91 98200 11223
+                      <a href="tel:+918169724736" className="text-brand-navy font-semibold">
+                        +91 81697 24736
+                      </a>
+                    </p>
+                    <p>
+                      <span className="text-slate-500 font-medium">WhatsApp Support: </span>
+                      <a
+                        href={WHATSAPP_URL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-emerald-700 underline underline-offset-2 font-semibold"
+                      >
+                        {WHATSAPP_PHONE} (Message Only)
                       </a>
                     </p>
                     <p>

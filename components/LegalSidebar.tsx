@@ -11,10 +11,12 @@ import {
   Download,
   Phone,
   Mail,
+  MessageSquare,
   ArrowRight,
   ExternalLink,
   ChevronRight,
 } from 'lucide-react';
+import { WHATSAPP_PHONE, WHATSAPP_URL } from '@/lib/site';
 
 interface LegalSidebarProps {
   isOpen: boolean;
@@ -50,7 +52,7 @@ Welcome to GO PARTNER ("Platform", "we", "our", or "us"). We operate a digital t
 Matching nearest vehicles, fare and toll computation, Jio DLT SMS (GOPNTR).
 
 3. GRIEVANCE OFFICER
-Email: support@gopartner.in / grievance@gopartner.in | Helpline: +91 98200 11223
+Email: contact@gopartnerlogistics.in | Helpline / WhatsApp: +91 81697 24736
 Jurisdiction: Mumbai, Maharashtra, India`,
     },
     {
@@ -216,14 +218,25 @@ Effective Date: November 2026
               <div className="pt-1 text-xs space-y-1 text-slate-700">
                 <p className="flex items-center gap-2">
                   <Mail className="w-3.5 h-3.5 text-brand-orange" />
-                  <a href="mailto:grievance@gopartner.in" className="hover:underline font-semibold">
-                    grievance@gopartner.in
+                  <a href="mailto:contact@gopartnerlogistics.in" className="hover:underline font-semibold">
+                    contact@gopartnerlogistics.in
                   </a>
                 </p>
                 <p className="flex items-center gap-2">
                   <Phone className="w-3.5 h-3.5 text-brand-orange" />
-                  <a href="tel:+919820011223" className="hover:underline font-semibold">
-                    +91 98200 11223
+                  <a href="tel:+918169724736" className="hover:underline font-semibold">
+                    +91 81697 24736
+                  </a>
+                </p>
+                <p className="flex items-center gap-2">
+                  <MessageSquare className="w-3.5 h-3.5 text-emerald-600" />
+                  <a
+                    href={WHATSAPP_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:underline font-semibold text-emerald-700"
+                  >
+                    {WHATSAPP_PHONE} (Message Only)
                   </a>
                 </p>
                 <p className="text-[11px] text-slate-500 pt-1">

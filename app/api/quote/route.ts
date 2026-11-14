@@ -3,6 +3,7 @@ import { connectToDatabase } from '@/lib/db';
 import QuoteRequest from '@/lib/models/QuoteRequest';
 import { checkRateLimit } from '@/lib/rateLimit';
 import { validateQuoteSubmission } from '@/lib/validation';
+import { sendQuoteNotificationEmail } from '@/lib/email';
 
 export async function POST(request: NextRequest) {
   try {
@@ -77,11 +78,25 @@ export async function POST(request: NextRequest) {
       }
     }
 
+    const referenceId = savedQuote?._id ? String(savedQuote._id) : `QT-${Date.now().toString().slice(-6)}`;
+
+    // Send email alert to official inbox (contact@gopartnerlogistics.in)
+    try {
+      await sendQuoteNotificationEmail({
+        ...validation.sanitized,
+        estimatedCost,
+        referenceId,
+        ipAddress: ip,
+      });
+    } catch (mailErr) {
+      console.warn('Quote email notification warning (quote saved in DB):', mailErr);
+    }
+
     return NextResponse.json(
       {
         success: true,
         message: 'Your freight rate request has been calculated and registered.',
-        referenceId: savedQuote?._id || `QT-${Date.now().toString().slice(-6)}`,
+        referenceId,
         estimatedRange: estimatedCost,
         serviceType: validation.sanitized.serviceType,
       },
