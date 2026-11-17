@@ -257,7 +257,7 @@ DriverPartnerSchema.index({ status: 1 });
 const DriverPartnerModel =
   mongoose.models.DriverPartner || mongoose.model('DriverPartner', DriverPartnerSchema);
 
-// Driver Partner Application Route (0% Commission Model)
+// Driver Partner Application Route (Transparent Driver Logistics Model)
 app.post('/api/driver-partner', submissionLimiter, async (req, res) => {
   try {
     const { fullName, phoneNumber, drivingLicenceNumber, vehicleCategory, registrationNumber, operatingCity } =

@@ -41,7 +41,7 @@ The application delivers six fully functional pages with persistent URLs, active
    - Downloadable policy document action.
 
 6. **Terms & Conditions (`/terms-and-conditions` & `/terms`)**:
-   - Complete commercial logistics agreement sections covering Digital Intermediary Nature under IT Act 2000, Commercial Driver Partner Obligations, 0% Commission Direct Driver Model, Strict Prohibited Goods Policy with high-visibility alerts, 100% Toll Pass-Through (Bandra-Worli Sea Link, Atal Setu / MTHL, Mumbai-Pune Expressway), Limitation of Liability, and Mumbai Court Jurisdiction.
+   - Complete commercial logistics agreement sections covering Digital Intermediary Nature under IT Act 2000, Commercial Driver Partner Obligations, Transparent Pricing Model, Strict Prohibited Goods Policy with high-visibility alerts, 100% Toll Pass-Through (Bandra-Worli Sea Link, Atal Setu / MTHL, Mumbai-Pune Expressway), Limitation of Liability, and Mumbai Court Jurisdiction.
    - Downloadable terms document action.
 
 7. **Cancellation & Refund Policy (`/refund` & `/cancellation`)**:

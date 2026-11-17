@@ -168,7 +168,7 @@ export default function HomePage() {
                       <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
                     </span>
                     <span className="text-xs font-semibold text-brand-navy">
-                      Verified Fleet Active • 0% Commission Direct
+                      Verified Commercial Fleet • On-Demand Dispatch
                     </span>
                   </div>
                   <Link
@@ -559,7 +559,7 @@ export default function HomePage() {
               </h2>
               <p className="text-sm sm:text-base text-slate-600 mt-3 leading-relaxed">
                 Designed from the ground up for Mumbai MMR and Maharashtra logistics. Transparent pricing,
-                zero commission deductions, instant radar dispatch, and strict cargo safety compliance.
+                upfront toll inclusion, instant radar dispatch, and strict cargo safety compliance.
               </p>
             </div>
           </ScrollReveal>

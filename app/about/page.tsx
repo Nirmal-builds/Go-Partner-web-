@@ -19,7 +19,7 @@ import ScrollReveal from '@/components/ScrollReveal';
 export const metadata: Metadata = constructMetadata({
   title: 'About Us | Goods Transportation & Freight Logistics Platform',
   description:
-    'Learn about GO-PARTNER, our mission to create a smarter freight ecosystem, verified commercial carrier network, and 0% commission direct trip model across Mumbai MMR and Maharashtra.',
+    'Learn about GO-PARTNER, our mission to create a smarter freight ecosystem, verified commercial carrier network, and transparent digital logistics platform across Mumbai MMR and Maharashtra.',
   path: '/about',
   image: '/images/about-indian-team.jpg',
   imageAlt: 'GO-PARTNER Team of Fleet Drivers and Logistics Partners',
@@ -234,18 +234,18 @@ export default function AboutPage() {
               </p>
 
               <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
-                At the heart of GO-PARTNER is the 0% commission direct trip model. Driver-partners retain their full
-                earnings and highway tolls, while businesses receive on-demand access to verified commercial
-                vehicles, accurate GPS dispatch, and clear pricing from pickup to delivery.
+                At the heart of GO-PARTNER is a transparent and reliable on-demand freight model. Shippers receive
+                upfront, predictable pricing with all tolls included, while driver-partners benefit from prompt payouts,
+                direct proximity dispatch, and clear trip accountability from pickup to delivery.
               </p>
 
               {/* Three Founder Pillars */}
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
                 <div className="p-4 bg-slate-50 rounded-lg border border-slate-200 flex flex-col justify-between">
                   <div>
-                    <span className="text-xs font-bold text-brand-navy block mb-1">Direct Trip Model</span>
+                    <span className="text-xs font-bold text-brand-navy block mb-1">Transparent Pricing</span>
                     <p className="text-[11px] text-slate-600 leading-relaxed">
-                      0% platform commission on trips so driver-partners retain 100% of their earnings and tolls.
+                      Upfront distance-based fares with all tolls included and zero hidden charges for shippers.
                     </p>
                   </div>
                 </div>
