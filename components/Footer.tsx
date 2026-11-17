@@ -284,6 +284,18 @@ export default function Footer() {
             >
               Cancellation & Refunds
             </Link>
+            <span className="text-slate-700">|</span>
+            <button
+              type="button"
+              onClick={() => {
+                if (typeof window !== 'undefined') {
+                  window.dispatchEvent(new CustomEvent('open_cookie_settings'));
+                }
+              }}
+              className="hover:text-white transition-colors cursor-pointer text-xs"
+            >
+              Cookie Settings
+            </button>
           </div>
         </div>
       </div>

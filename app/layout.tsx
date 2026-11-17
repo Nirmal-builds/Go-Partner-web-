@@ -5,6 +5,7 @@ import Footer from '@/components/Footer';
 import PageTransition from '@/components/PageTransition';
 import FloatingActionDock from '@/components/FloatingActionDock';
 import GoogleAnalytics from '@/components/GoogleAnalytics';
+import CookieConsent from '@/components/CookieConsent';
 import {
   SITE_NAME,
   SITE_LEGAL_NAME,
@@ -128,6 +129,7 @@ export default function RootLayout({
         </main>
         <Footer />
         <FloatingActionDock />
+        <CookieConsent />
       </body>
     </html>
   );
