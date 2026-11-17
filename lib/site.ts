@@ -21,9 +21,9 @@ export const SITE_URL =
 export const CONTACT_PHONE = '+91 81697 24736';
 export const CONTACT_PHONE_RAW = '+918169724736';
 export const CONTACT_EMAIL = 'contact@gopartnerlogistics.in';
-export const SUPPORT_EMAIL = 'support@gopartner.in';
+export const SUPPORT_EMAIL = 'contact@gopartnerlogistics.in';
 export const GRIEVANCE_OFFICER = 'Waris Khan';
-export const GRIEVANCE_EMAIL = 'wariskhan6786@gmail.com';
+export const GRIEVANCE_EMAIL = 'contact@gopartnerlogistics.in';
 
 export const WHATSAPP_PHONE = '+91 81697 24736';
 export const WHATSAPP_PHONE_RAW = '918169724736';
@@ -43,10 +43,10 @@ export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_PHONE_RAW}?text=${encodeUR
 export const GOOGLE_PLAY_URL = '#';
 
 export const BUSINESS_ADDRESS = {
-  streetAddress: 'Mumbai MMR Logistics & Transport Hub',
-  addressLocality: 'Mumbai',
+  streetAddress: 'BEHRAM NAGAR, A.K. MARG, OPP. NATIONAL SCHOOL',
+  addressLocality: 'OLD BANDRA EAST, MUMBAI',
   addressRegion: 'Maharashtra',
-  postalCode: '400001',
+  postalCode: '400051',
   addressCountry: 'IN',
 };
 

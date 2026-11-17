@@ -153,7 +153,7 @@ Every Customer and Driver Partner has the right to:
 11. ACCOUNT & DATA DELETION REQUEST PROCESS
 You can permanently delete your GO Partner account and associated personal data using either method below:
 1. In-App Method: Open Profile / Settings -> Tap "Privacy, Legal & Data Protection" -> Select "Delete My Account" -> Verify via OTP.
-2. Email Method: Send an email from your registered email or mention your registered mobile number to wariskhan6786@gmail.com with the subject line: "Account Deletion Request - [Your Mobile Number]".
+2. Email Method: Send an email from your registered email or mention your registered mobile number to contact@gopartnerlogistics.in with the subject line: "Account Deletion Request - [Your Mobile Number]".
 
 Upon verification and settlement of any active trips or wallet dues, personal identifiers are permanently erased from active databases within 7 working days.
 
@@ -165,10 +165,10 @@ In accordance with the Digital Personal Data Protection Act, 2023 and the IT Rul
 
 - Grievance & Data Protection Officer: Waris Khan
 - Entity Name: GO Partner Logistics (GO PARTNER SERVICES)
-- Privacy & Compliance Email: wariskhan6786@gmail.com
-- Customer & Driver Support Email: support@gopartner.in / contact@gopartnerlogistics.in
+- Privacy & Compliance Email: contact@gopartnerlogistics.in
+- Customer & Driver Support Email: contact@gopartnerlogistics.in
 - Helpline Phone Number: +91 81697 24736
-- Registered Office Address: Mumbai MMR Logistics & Transport Hub, Mumbai, Maharashtra 400001, India
+- Registered Office Address: BEHRAM NAGAR, A.K. MARG, OPP. NATIONAL SCHOOL, OLD BANDRA EAST, MUMBAI – 400051, Maharashtra, India
 - Response Time: Complaint acknowledgment within 48 hours and final resolution within 30 days.
 
 © 2026 GO Partner Logistics (GO PARTNER SERVICES). All Rights Reserved.`;
@@ -224,7 +224,7 @@ In accordance with the Digital Personal Data Protection Act, 2023 and the IT Rul
             <div>
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 text-xs font-bold border border-emerald-200 mb-2">
                 <Shield className="w-3.5 h-3.5" />
-                <span>Zero Data Sale Guarantee Active</span>
+                <span>Zero Data Sale Guarantee</span>
               </div>
               <h1 className="text-3xl sm:text-4xl font-black text-brand-navy font-heading tracking-tight">
                 Privacy Policy
@@ -261,15 +261,10 @@ In accordance with the Digital Personal Data Protection Act, 2023 and the IT Rul
 
       {/* ZERO DATA SALE BANNER */}
       <section className="bg-emerald-600 text-white py-3.5 px-4 shadow-inner">
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 text-center sm:text-left">
-          <div className="flex items-center gap-2.5">
-            <Lock className="w-4 h-4 text-emerald-200 flex-shrink-0" />
-            <span className="text-xs sm:text-sm font-semibold tracking-wide">
-              <strong>ZERO DATA SALE GUARANTEE:</strong> We do NOT sell, rent, lease, or trade personal data to advertisers or brokers.
-            </span>
-          </div>
-          <span className="text-[11px] bg-white/20 px-2.5 py-0.5 rounded-full font-mono font-medium">
-            Effective: Nov 16, 2026
+        <div className="max-w-7xl mx-auto flex items-center justify-center sm:justify-start gap-2.5 text-center sm:text-left">
+          <Lock className="w-4 h-4 text-emerald-200 flex-shrink-0" />
+          <span className="text-xs sm:text-sm font-semibold tracking-wide">
+            <strong>ZERO DATA SALE GUARANTEE:</strong> We do NOT sell, rent, lease, or trade personal data to advertisers or brokers.
           </span>
         </div>
       </section>
@@ -295,7 +290,6 @@ In accordance with the Digital Personal Data Protection Act, 2023 and the IT Rul
                         <Shield className="w-3.5 h-3.5" />
                         <span>Privacy Policy</span>
                       </span>
-                      <span className="text-[10px] bg-white/20 px-1.5 py-0.5 rounded font-mono">Active</span>
                     </Link>
 
                     <Link
@@ -365,10 +359,10 @@ In accordance with the Digital Personal Data Protection Act, 2023 and the IT Rul
                     Formal statutory redressal under DPDP Act 2023. Acknowledged within 48 hours.
                   </p>
                   <a
-                    href="mailto:wariskhan6786@gmail.com"
+                    href="mailto:contact@gopartnerlogistics.in"
                     className="text-[11px] font-semibold text-brand-navy hover:text-brand-orange underline block truncate"
                   >
-                    wariskhan6786@gmail.com
+                    contact@gopartnerlogistics.in
                   </a>
                 </div>
               </div>
@@ -379,11 +373,7 @@ In accordance with the Digital Personal Data Protection Act, 2023 and the IT Rul
 
               {/* Meta Card */}
               <div className="bg-white rounded-lg p-6 border border-slate-200 shadow-subtle">
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs">
-                  <div>
-                    <span className="text-slate-400 block font-mono text-[10px] uppercase">Effective Date</span>
-                    <span className="font-bold text-slate-800">November 16, 2026</span>
-                  </div>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs">
                   <div>
                     <span className="text-slate-400 block font-mono text-[10px] uppercase">Operating Entity</span>
                     <span className="font-bold text-slate-800">GO PARTNER SERVICES</span>
@@ -720,7 +710,7 @@ In accordance with the Digital Personal Data Protection Act, 2023 and the IT Rul
                     <strong className="text-brand-navy text-sm block mb-1">Method 2: Email Deletion Request</strong>
                     <span className="text-slate-600">Send an email from your registered email address or mention your registered mobile number to:</span>
                     <div className="mt-2 font-mono text-xs bg-white p-2.5 rounded border border-slate-200 text-brand-navy font-bold">
-                      To: wariskhan6786@gmail.com<br />
+                      To: contact@gopartnerlogistics.in<br />
                       Subject: Account Deletion Request - [Your Mobile Number]
                     </div>
                   </div>
@@ -771,14 +761,14 @@ In accordance with the Digital Personal Data Protection Act, 2023 and the IT Rul
                     </div>
                     <div>
                       <span className="text-slate-400 block font-mono text-[10px] uppercase">Privacy &amp; Compliance Email</span>
-                      <a href="mailto:wariskhan6786@gmail.com" className="font-bold text-brand-navy hover:underline">
-                        wariskhan6786@gmail.com
+                      <a href="mailto:contact@gopartnerlogistics.in" className="font-bold text-brand-navy hover:underline">
+                        contact@gopartnerlogistics.in
                       </a>
                     </div>
                     <div>
                       <span className="text-slate-400 block font-mono text-[10px] uppercase">Customer &amp; Driver Support</span>
-                      <a href="mailto:support@gopartner.in" className="font-bold text-brand-navy hover:underline">
-                        support@gopartner.in
+                      <a href="mailto:contact@gopartnerlogistics.in" className="font-bold text-brand-navy hover:underline">
+                        contact@gopartnerlogistics.in
                       </a>
                     </div>
                     <div>
@@ -796,7 +786,7 @@ In accordance with the Digital Personal Data Protection Act, 2023 and the IT Rul
                   <div className="pt-3 border-t border-slate-200">
                     <span className="text-slate-400 block font-mono text-[10px] uppercase">Registered Office Address</span>
                     <span className="font-medium text-slate-700">
-                      Mumbai MMR Logistics &amp; Transport Hub, Mumbai, Maharashtra 400001, India
+                      BEHRAM NAGAR, A.K. MARG, OPP. NATIONAL SCHOOL, OLD BANDRA EAST, MUMBAI – 400051, Maharashtra, India
                     </span>
                   </div>
                 </div>

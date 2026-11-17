@@ -48,8 +48,8 @@ GO Partner Logistics does NOT sell, rent, lease, or trade personal data to third
 1. COMPLIANCE: Digital Personal Data Protection Act 2023, IT Act 2000, and Google Play Prominent Disclosure Policies.
 2. BACKGROUND LOCATION (DRIVERS): Real-time tracking operates solely when drivers set duty status to "ONLINE" for load dispatch and live customer freight tracking.
 3. GRIEVANCE REDRESSAL OFFICER: Waris Khan
-Email: wariskhan6786@gmail.com | Helpline: +91 81697 24736
-Office: Mumbai MMR Logistics Hub, Mumbai, Maharashtra, India`,
+Email: contact@gopartnerlogistics.in | Helpline: +91 81697 24736
+Office: BEHRAM NAGAR, A.K. MARG, OPP. NATIONAL SCHOOL, OLD BANDRA EAST, MUMBAI – 400051, Maharashtra, India`,
     },
     {
       title: 'Terms of Service',
@@ -67,7 +67,7 @@ Operating Entity: GO PARTNER SERVICES
 2. VOLUNTARY FARE BOOST: Optional customer incentive offer for faster driver acceptance during busy hours.
 3. COMMISSION & WALLET: 5% on 2-Wheelers, 8% on Commercial Vehicles. Dues thresholds: 2W (₹250), Tempo (₹400), Heavy (₹1,000).
 4. PROHIBITED CARGO: Zero-tolerance against narcotics, explosives, illegal cash, hazardous chemicals.
-5. GRIEVANCE OFFICER: Waris Khan (wariskhan6786@gmail.com | +91 81697 24736)`,
+5. GRIEVANCE OFFICER: Waris Khan (contact@gopartnerlogistics.in | +91 81697 24736)`,
     },
     {
       title: 'Cancellation & Refund',
@@ -86,7 +86,7 @@ Operating Entity: GO PARTNER SERVICES
 - Customer cancellation after driver travels 4+ km: ₹20 Driver Goodwill Compensation upon rebooking.
 - Driver Daily Cancellation Limit: Maximum 2 driver-fault cancellations per calendar day.
 2. REFUNDS: Instant for GO Wallet deductions; 2 to 4 business days to source bank via payment gateway.
-3. GRIEVANCE OFFICER: Waris Khan (wariskhan6786@gmail.com | +91 81697 24736)`,
+3. GRIEVANCE OFFICER: Waris Khan (contact@gopartnerlogistics.in | +91 81697 24736)`,
     },
   ];
 

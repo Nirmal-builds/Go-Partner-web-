@@ -564,109 +564,123 @@ export default function HomePage() {
             </div>
           </ScrollReveal>
 
-          {/* 4 App Feature Columns */}
+          {/* 3 App Feature Columns matching real Mobile App */}
           <ScrollReveal direction="up" delay={0.12}>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
-            {/* Feature 1: 0% Commission Direct Trips */}
-            <div className="bg-slate-50 rounded-lg border border-slate-200 overflow-hidden flex flex-col justify-between shadow-subtle hover:border-slate-300 transition-colors h-full">
-              <div className="p-5 flex flex-col flex-grow">
-                <span className="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-emerald-100 text-emerald-800 inline-block mb-3 self-start">
-                  0% Commission
-                </span>
-                <h3 className="h-6 flex items-center text-base font-bold text-brand-navy mb-1.5">
-                  Direct Trip Earnings
-                </h3>
-                <p className="h-[54px] text-xs text-slate-600 leading-relaxed mb-4 line-clamp-3">
-                  100% of the trip fare and bridge tolls go directly to the driver partner. Zero platform fee, zero hidden deductions.
-                </p>
-              </div>
-              <div className="relative h-64 w-full bg-slate-900 border-t border-slate-200 overflow-hidden mt-auto">
-                <Image
-                  src="/images/app-checkout-fare-v2.jpg"
-                  alt="GO-PARTNER Transparent Fare and 0% Commission Breakdown"
-                  fill
-                  sizes="(max-width: 768px) 100vw, 25vw"
-                  className="object-cover object-top"
-                  loading="lazy"
-                />
-              </div>
-            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
+              {/* Feature 1: Fleet Selection Screen */}
+              <div className="group bg-white rounded-xl border border-slate-200 overflow-hidden flex flex-col justify-between shadow-subtle hover:shadow-xl hover:border-slate-300 transition-all duration-300 h-full">
+                <div className="p-6 flex flex-col flex-grow">
+                  <span className="px-2.5 py-1 rounded text-[10px] font-bold uppercase tracking-wider bg-emerald-100 text-emerald-800 inline-block mb-3 self-start">
+                    Verified Fleet
+                  </span>
+                  <h3 className="text-lg font-bold text-brand-navy mb-2 font-heading">
+                    Vehicle Selection &amp; Capacity
+                  </h3>
+                  <p className="text-xs text-slate-600 leading-relaxed">
+                    Choose Scooters (20 kg), Auto Rickshaws (100 kg), 3-Wheeler Cargo (500 kg), Cargo EVs (450 kg), and Mini Trucks with upfront fares and free loading time.
+                  </p>
+                </div>
+                <div className="relative pt-6 pb-6 px-4 bg-gradient-to-b from-slate-900 via-slate-900 to-slate-950 border-t border-slate-100 overflow-hidden flex items-center justify-center mt-auto">
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(16,185,129,0.18),transparent_70%)] pointer-events-none" />
+                  
+                  {/* Smartphone Chassis */}
+                  <div className="relative w-full max-w-[270px] rounded-[2.2rem] p-2 bg-gradient-to-b from-slate-700 via-slate-800 to-slate-900 shadow-[0_20px_40px_rgba(0,0,0,0.5)] border border-slate-600/50 group-hover:scale-[1.02] transition-transform duration-300">
+                    {/* Dynamic Island Notch */}
+                    <div className="absolute top-3.5 left-1/2 -translate-x-1/2 w-20 h-4 bg-slate-950 rounded-full z-20 flex items-center justify-end pr-2 shadow-sm">
+                      <div className="w-1.5 h-1.5 rounded-full bg-slate-800/80" />
+                    </div>
 
-            {/* Feature 2: 0-6 km Radar Dispatch */}
-            <div className="bg-slate-50 rounded-lg border border-slate-200 overflow-hidden flex flex-col justify-between shadow-subtle hover:border-slate-300 transition-colors h-full">
-              <div className="p-5 flex flex-col flex-grow">
-                <span className="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-blue-100 text-blue-800 inline-block mb-3 self-start">
-                  Live Dispatch Radar
-                </span>
-                <h3 className="h-6 flex items-center text-base font-bold text-brand-navy mb-1.5">
-                  0-6 km Proximity Radar
-                </h3>
-                <p className="h-[54px] text-xs text-slate-600 leading-relaxed mb-4 line-clamp-3">
-                  Intelligent radar constantly monitors verified vehicles nearby. Loud audible trip siren alerts drivers instantly upon booking.
-                </p>
+                    {/* Screen Inset */}
+                    <div className="relative aspect-[9/15.5] w-full rounded-[1.7rem] overflow-hidden bg-slate-950 border border-slate-700/60 shadow-inner">
+                      <Image
+                        src="/images/mobile-vehicles-clean.jpg"
+                        alt="GO-PARTNER Customer App Fleet and Vehicle Selection Screen"
+                        fill
+                        sizes="(max-width: 768px) 100vw, 33vw"
+                        className="object-cover object-top"
+                        loading="lazy"
+                      />
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div className="relative h-64 w-full bg-slate-900 border-t border-slate-200 overflow-hidden mt-auto">
-                <Image
-                  src="/images/app-radar-view-v2.jpg"
-                  alt="GO-PARTNER Active Radar Screen for Driver Dispatch"
-                  fill
-                  sizes="(max-width: 768px) 100vw, 25vw"
-                  className="object-cover object-center"
-                  loading="lazy"
-                />
-              </div>
-            </div>
 
-            {/* Feature 3: Verified Fleet Selection */}
-            <div className="bg-slate-50 rounded-lg border border-slate-200 overflow-hidden flex flex-col justify-between shadow-subtle hover:border-slate-300 transition-colors h-full">
-              <div className="p-5 flex flex-col flex-grow">
-                <span className="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-purple-100 text-purple-800 inline-block mb-3 self-start">
-                  Diverse Fleet
-                </span>
-                <h3 className="h-6 flex items-center text-base font-bold text-brand-navy mb-1.5">
-                  Commercial Vehicles
-                </h3>
-                <p className="h-[54px] text-xs text-slate-600 leading-relaxed mb-4 line-clamp-3">
-                  Choose from 3-Wheeler Cargo EVs, 3-Wheeler Cargo, Mini Trucks, and 2-Wheelers tailored to cargo dimensions and payload weight.
-                </p>
-              </div>
-              <div className="relative h-64 w-full bg-slate-900 border-t border-slate-200 overflow-hidden mt-auto">
-                <Image
-                  src="/images/app-vehicles-list-v2.jpg"
-                  alt="GO-PARTNER Commercial Vehicle Selection Grid"
-                  fill
-                  sizes="(max-width: 768px) 100vw, 25vw"
-                  className="object-cover object-center"
-                  loading="lazy"
-                />
-              </div>
-            </div>
+              {/* Feature 2: Driver App Duty & Radar */}
+              <div className="group bg-white rounded-xl border border-slate-200 overflow-hidden flex flex-col justify-between shadow-subtle hover:shadow-xl hover:border-slate-300 transition-all duration-300 h-full">
+                <div className="p-6 flex flex-col flex-grow">
+                  <span className="px-2.5 py-1 rounded text-[10px] font-bold uppercase tracking-wider bg-blue-100 text-blue-800 inline-block mb-3 self-start">
+                    Driver Partner App
+                  </span>
+                  <h3 className="text-lg font-bold text-brand-navy mb-2 font-heading">
+                    Online Duty &amp; Live Radar
+                  </h3>
+                  <p className="text-xs text-slate-600 leading-relaxed">
+                    Active duty radar with instant trip audio alarms, live Hindi notice board (सूचना बोर्ड), 24x7 support desk, and &quot;Go To Home&quot; (घर की तरफ का भाड़ा) trips.
+                  </p>
+                </div>
+                <div className="relative pt-6 pb-6 px-4 bg-gradient-to-b from-slate-900 via-slate-900 to-slate-950 border-t border-slate-100 overflow-hidden flex items-center justify-center mt-auto">
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(59,130,246,0.18),transparent_70%)] pointer-events-none" />
+                  
+                  {/* Smartphone Chassis */}
+                  <div className="relative w-full max-w-[270px] rounded-[2.2rem] p-2 bg-gradient-to-b from-slate-700 via-slate-800 to-slate-900 shadow-[0_20px_40px_rgba(0,0,0,0.5)] border border-slate-600/50 group-hover:scale-[1.02] transition-transform duration-300">
+                    {/* Dynamic Island Notch */}
+                    <div className="absolute top-3.5 left-1/2 -translate-x-1/2 w-20 h-4 bg-slate-950 rounded-full z-20 flex items-center justify-end pr-2 shadow-sm">
+                      <div className="w-1.5 h-1.5 rounded-full bg-slate-800/80" />
+                    </div>
 
-            {/* Feature 4: Strict Prohibited Goods Safety */}
-            <div className="bg-slate-50 rounded-lg border border-slate-200 overflow-hidden flex flex-col justify-between shadow-subtle hover:border-slate-300 transition-colors h-full">
-              <div className="p-5 flex flex-col flex-grow">
-                <span className="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-red-100 text-red-800 inline-block mb-3 self-start">
-                  Safety First
-                </span>
-                <h3 className="h-6 flex items-center text-base font-bold text-brand-navy mb-1.5">
-                  Zero-Tolerance Cargo Policy
-                </h3>
-                <p className="h-[54px] text-xs text-slate-600 leading-relaxed mb-4 line-clamp-3">
-                  Strict legal declarations protecting both shipper and carrier. No narcotics, firearms, or contraband permitted on any trip.
-                </p>
+                    {/* Screen Inset */}
+                    <div className="relative aspect-[9/15.5] w-full rounded-[1.7rem] overflow-hidden bg-slate-950 border border-slate-700/60 shadow-inner">
+                      <Image
+                        src="/images/mobile-driver-clean.jpg"
+                        alt="GO-PARTNER Driver App Online Duty and Dispatch Screen"
+                        fill
+                        sizes="(max-width: 768px) 100vw, 33vw"
+                        className="object-cover object-top"
+                        loading="lazy"
+                      />
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div className="relative h-64 w-full bg-slate-900 border-t border-slate-200 overflow-hidden mt-auto">
-                <Image
-                  src="/images/app-prohibited-items-v2.jpg"
-                  alt="GO-PARTNER Illegal and Prohibited Items Safety Terms"
-                  fill
-                  sizes="(max-width: 768px) 100vw, 25vw"
-                  className="object-cover object-top"
-                  loading="lazy"
-                />
+
+              {/* Feature 3: Toll-Free Route & Fare Bidding */}
+              <div className="group bg-white rounded-xl border border-slate-200 overflow-hidden flex flex-col justify-between shadow-subtle hover:shadow-xl hover:border-slate-300 transition-all duration-300 h-full">
+                <div className="p-6 flex flex-col flex-grow">
+                  <span className="px-2.5 py-1 rounded text-[10px] font-bold uppercase tracking-wider bg-purple-100 text-purple-800 inline-block mb-3 self-start">
+                    Toll-Free &amp; Bidding
+                  </span>
+                  <h3 className="text-lg font-bold text-brand-navy mb-2 font-heading">
+                    Toll Included &amp; Fare Boost
+                  </h3>
+                  <p className="text-xs text-slate-600 leading-relaxed">
+                    All highway tolls are pre-included with zero extra cash on the road. Add optional voluntary priority boosts (+₹20 to +₹200) for instant driver pickup via UPI or Cash.
+                  </p>
+                </div>
+                <div className="relative pt-6 pb-6 px-4 bg-gradient-to-b from-slate-900 via-slate-900 to-slate-950 border-t border-slate-100 overflow-hidden flex items-center justify-center mt-auto">
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(249,115,22,0.18),transparent_70%)] pointer-events-none" />
+                  
+                  {/* Smartphone Chassis */}
+                  <div className="relative w-full max-w-[270px] rounded-[2.2rem] p-2 bg-gradient-to-b from-slate-700 via-slate-800 to-slate-900 shadow-[0_20px_40px_rgba(0,0,0,0.5)] border border-slate-600/50 group-hover:scale-[1.02] transition-transform duration-300">
+                    {/* Dynamic Island Notch */}
+                    <div className="absolute top-3.5 left-1/2 -translate-x-1/2 w-20 h-4 bg-slate-950 rounded-full z-20 flex items-center justify-end pr-2 shadow-sm">
+                      <div className="w-1.5 h-1.5 rounded-full bg-slate-800/80" />
+                    </div>
+
+                    {/* Screen Inset */}
+                    <div className="relative aspect-[9/15.5] w-full rounded-[1.7rem] overflow-hidden bg-slate-950 border border-slate-700/60 shadow-inner">
+                      <Image
+                        src="/images/mobile-bidding-clean.jpg"
+                        alt="GO-PARTNER Customer App Toll Free and Voluntary Bidding Screen"
+                        fill
+                        sizes="(max-width: 768px) 100vw, 33vw"
+                        className="object-cover object-top"
+                        loading="lazy"
+                      />
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
           </ScrollReveal>
 
           {/* Bottom App Banner Bar */}

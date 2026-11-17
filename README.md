@@ -30,7 +30,7 @@ The application delivers six fully functional pages with persistent URLs, active
    - Interactive Freight Rate Estimator modal with instant rate calculation.
 
 4. **Contact Us (`/contact`)**:
-   - Regional contact channels: Helpline & 24/7 Dispatch (+91 81697 24736), Support Email (contact@gopartnerlogistics.in), Regional Transport Headquarters (Mumbai MMR, Maharashtra, India).
+   - Regional contact channels: Helpline & 24/7 Dispatch (+91 81697 24736), Support Email (contact@gopartnerlogistics.in), Regional Transport Headquarters (BEHRAM NAGAR, A.K. MARG, OPP. NATIONAL SCHOOL, OLD BANDRA EAST, MUMBAI – 400051).
    - One-click WhatsApp Direct Chat integration (+91 81697 24736).
    - Embedded interactive location map covering Mumbai MMR.
    - Business enquiry form with real-time frontend validation, server-side validation, rate limiting, and MongoDB persistence.

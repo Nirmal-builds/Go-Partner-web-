@@ -142,10 +142,10 @@ For any questions, booking disputes, or legal/compliance notices regarding these
 
 - Grievance Officer: Waris Khan
 - Entity Name: GO Partner Logistics (GO PARTNER SERVICES)
-- Legal & Compliance Email: wariskhan6786@gmail.com
-- Customer & Driver Support Email: support@gopartner.in / contact@gopartnerlogistics.in
+- Legal & Compliance Email: contact@gopartnerlogistics.in
+- Customer & Driver Support Email: contact@gopartnerlogistics.in
 - Helpline Phone Number: +91 81697 24736
-- Registered Office Address: Mumbai MMR Logistics & Transport Hub, Mumbai, Maharashtra 400001, India
+- Registered Office Address: BEHRAM NAGAR, A.K. MARG, OPP. NATIONAL SCHOOL, OLD BANDRA EAST, MUMBAI – 400051, Maharashtra, India
 
 © 2026 GO Partner Logistics (GO PARTNER SERVICES). All Rights Reserved.`;
 
@@ -238,15 +238,10 @@ For any questions, booking disputes, or legal/compliance notices regarding these
 
       {/* WARNING BANNER */}
       <section className="bg-brand-navy text-white py-3.5 px-4 shadow-inner">
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 text-center sm:text-left">
-          <div className="flex items-center gap-2.5">
-            <AlertTriangle className="w-4 h-4 text-brand-orange flex-shrink-0" />
-            <span className="text-xs sm:text-sm font-medium">
-              By registering an account, booking a vehicle, or accepting trips on GO Partner, you agree to be legally bound by these Terms.
-            </span>
-          </div>
-          <span className="text-[11px] bg-white/10 px-2.5 py-0.5 rounded-full font-mono text-slate-300">
-            Effective: Nov 16, 2026
+        <div className="max-w-7xl mx-auto flex items-center justify-center sm:justify-start gap-2.5 text-center sm:text-left">
+          <AlertTriangle className="w-4 h-4 text-brand-orange flex-shrink-0" />
+          <span className="text-xs sm:text-sm font-medium">
+            By registering an account, booking a vehicle, or accepting trips on GO Partner, you agree to be legally bound by these Terms.
           </span>
         </div>
       </section>
@@ -282,7 +277,6 @@ For any questions, booking disputes, or legal/compliance notices regarding these
                         <FileText className="w-3.5 h-3.5" />
                         <span>Terms &amp; Conditions</span>
                       </span>
-                      <span className="text-[10px] bg-white/20 px-1.5 py-0.5 rounded font-mono">Active</span>
                     </Link>
 
                     <Link
@@ -342,10 +336,10 @@ For any questions, booking disputes, or legal/compliance notices regarding these
                     Formal statutory redressal under Indian Law. Acknowledged within 48 hours.
                   </p>
                   <a
-                    href="mailto:wariskhan6786@gmail.com"
+                    href="mailto:contact@gopartnerlogistics.in"
                     className="text-[11px] font-semibold text-brand-navy hover:text-brand-orange underline block truncate"
                   >
-                    wariskhan6786@gmail.com
+                    contact@gopartnerlogistics.in
                   </a>
                 </div>
               </div>
@@ -356,11 +350,7 @@ For any questions, booking disputes, or legal/compliance notices regarding these
 
               {/* Meta Card */}
               <div className="bg-white rounded-lg p-6 border border-slate-200 shadow-subtle">
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs">
-                  <div>
-                    <span className="text-slate-400 block font-mono text-[10px] uppercase">Effective Date</span>
-                    <span className="font-bold text-slate-800">November 16, 2026</span>
-                  </div>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs">
                   <div>
                     <span className="text-slate-400 block font-mono text-[10px] uppercase">Operating Entity</span>
                     <span className="font-bold text-slate-800">GO PARTNER SERVICES</span>
@@ -712,14 +702,14 @@ For any questions, booking disputes, or legal/compliance notices regarding these
                     </div>
                     <div>
                       <span className="text-slate-400 block font-mono text-[10px] uppercase">Legal &amp; Compliance Email</span>
-                      <a href="mailto:wariskhan6786@gmail.com" className="font-bold text-brand-navy hover:underline">
-                        wariskhan6786@gmail.com
+                      <a href="mailto:contact@gopartnerlogistics.in" className="font-bold text-brand-navy hover:underline">
+                        contact@gopartnerlogistics.in
                       </a>
                     </div>
                     <div>
                       <span className="text-slate-400 block font-mono text-[10px] uppercase">Customer &amp; Driver Support</span>
-                      <a href="mailto:support@gopartner.in" className="font-bold text-brand-navy hover:underline">
-                        support@gopartner.in
+                      <a href="mailto:contact@gopartnerlogistics.in" className="font-bold text-brand-navy hover:underline">
+                        contact@gopartnerlogistics.in
                       </a>
                     </div>
                     <div>
@@ -737,7 +727,7 @@ For any questions, booking disputes, or legal/compliance notices regarding these
                   <div className="pt-3 border-t border-slate-200">
                     <span className="text-slate-400 block font-mono text-[10px] uppercase">Registered Office Address</span>
                     <span className="font-medium text-slate-700">
-                      Mumbai MMR Logistics &amp; Transport Hub, Mumbai, Maharashtra 400001, India
+                      BEHRAM NAGAR, A.K. MARG, OPP. NATIONAL SCHOOL, OLD BANDRA EAST, MUMBAI – 400051, Maharashtra, India
                     </span>
                   </div>
                 </div>

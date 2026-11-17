@@ -274,12 +274,12 @@ export default function ContactPage() {
                     <div className="w-10 h-10 rounded-md bg-slate-100 text-brand-navy flex items-center justify-center mb-3">
                       <MapPin className="w-5 h-5" />
                     </div>
-                    <h3 className="text-sm font-bold text-brand-navy">Regional HQ</h3>
+                    <h3 className="text-sm font-bold text-brand-navy">Registered Office</h3>
                     <p className="text-xs text-slate-600 mt-1 leading-snug">
-                      Mumbai MMR Logistics Hub
+                      BEHRAM NAGAR, A.K. MARG, OPP. NATIONAL SCHOOL
                     </p>
                   </div>
-                  <p className="text-[11px] text-slate-400 mt-2">Mumbai, Maharashtra, India</p>
+                  <p className="text-[11px] text-slate-400 mt-2">OLD BANDRA EAST, MUMBAI – 400051</p>
                 </div>
 
                 {/* WhatsApp Quick Chat */}

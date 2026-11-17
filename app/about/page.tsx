@@ -31,7 +31,7 @@ export const metadata: Metadata = constructMetadata({
     'Maharashtra freight transport',
     'verified transport carriers',
     'logistics platform India',
-    'Waris founder GO-PARTNER',
+    'Waris Khan founder GO-PARTNER',
   ],
 });
 
@@ -185,7 +185,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 2.5 MEET THE FOUNDER: WARIS */}
+      {/* 2.5 MEET THE FOUNDER: WARIS KHAN */}
       <section className="py-16 lg:py-24 bg-white border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
@@ -195,7 +195,7 @@ export default function AboutPage() {
                 <div className="relative aspect-[3/4] w-full rounded-lg overflow-hidden bg-slate-100 border border-slate-100">
                   <Image
                     src="/images/founder-waris.jpg"
-                    alt="Waris, Founder of GO-PARTNER Logistics"
+                    alt="Waris Khan, Founder of GO-PARTNER Logistics"
                     fill
                     sizes="(max-width: 768px) 100vw, 360px"
                     className="object-cover object-[center_20%]"
@@ -203,7 +203,7 @@ export default function AboutPage() {
                   />
                 </div>
                 <div className="pt-4 pb-1 text-center">
-                  <h3 className="text-lg font-bold text-brand-navy">Waris</h3>
+                  <h3 className="text-lg font-bold text-brand-navy">Waris Khan</h3>
                   <p className="text-xs font-semibold text-brand-orange uppercase tracking-wider mt-0.5">
                     Founder, GO-PARTNER
                   </p>
@@ -222,12 +222,12 @@ export default function AboutPage() {
                   Empowering Transport Partners, Simplifying Freight
                 </h2>
                 <p className="text-sm font-semibold text-slate-500 mt-1">
-                  Waris | Founder, GO-PARTNER
+                  Waris Khan | Founder, GO-PARTNER
                 </p>
               </div>
 
               <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
-                Waris founded GO-PARTNER with a dedicated mission: to remove friction from commercial road
+                Waris Khan founded GO-PARTNER with a dedicated mission: to remove friction from commercial road
                 transport across Mumbai MMR and Maharashtra. Seeing how traditional brokerage models eroded driver
                 earnings while creating unpredictability for shippers, he designed GO-PARTNER around transparency,
                 direct accountability, and verified equipment.

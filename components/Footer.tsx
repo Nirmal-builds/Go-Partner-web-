@@ -31,10 +31,10 @@ export default function Footer() {
 
             <div className="pt-2 text-xs text-slate-400 space-y-1">
               <p className="font-semibold text-slate-300 uppercase tracking-wider text-[11px]">
-                Regional Headquarters
+                Registered Headquarters
               </p>
-              <p>Mumbai MMR & Maharashtra Logistics Hub</p>
-              <p>Mumbai, Maharashtra, India</p>
+              <p>BEHRAM NAGAR, A.K. MARG, OPP. NATIONAL SCHOOL</p>
+              <p>OLD BANDRA EAST, MUMBAI – 400051</p>
             </div>
           </div>
 
@@ -151,8 +151,13 @@ export default function Footer() {
               <li className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-brand-orange mt-0.5 flex-shrink-0" />
                 <div>
-                  <span className="text-xs text-slate-400 block">Operating Region</span>
-                  <span>Mumbai MMR & Maharashtra State</span>
+                  <span className="text-xs text-slate-400 block">Registered Office</span>
+                  <span className="text-white font-medium text-xs leading-snug block">
+                    BEHRAM NAGAR, A.K. MARG, OPP. NATIONAL SCHOOL
+                  </span>
+                  <span className="text-xs text-slate-300 block">
+                    OLD BANDRA EAST, MUMBAI – 400051
+                  </span>
                 </div>
               </li>
             </ul>
