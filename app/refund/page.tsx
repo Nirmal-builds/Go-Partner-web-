@@ -9,7 +9,6 @@ import {
   CheckCircle2,
   Clock,
   IndianRupee,
-  ShieldAlert,
   RefreshCw,
   Truck,
   Wallet,
@@ -19,9 +18,12 @@ import {
   UserCheck,
   Shield,
   FileText,
+  Zap,
+  Phone,
+  Mail,
 } from 'lucide-react';
 import { getBreadcrumbSchema } from '@/lib/seo';
-import { SITE_URL, WHATSAPP_PHONE, WHATSAPP_URL } from '@/lib/site';
+import { SITE_URL, CONTACT_PHONE, CONTACT_PHONE_RAW, WHATSAPP_PHONE, WHATSAPP_URL } from '@/lib/site';
 
 export default function RefundPage() {
   const [downloadSuccess, setDownloadSuccess] = useState(false);
@@ -34,46 +36,74 @@ export default function RefundPage() {
   const webPageJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'WebPage',
-    name: 'GO-PARTNER Cancellation and Refund Policy',
+    name: 'GO Partner Logistics Cancellation & Refund Policy',
     url: `${SITE_URL}/refund`,
     description:
-      'GO-PARTNER Cancellation and Refund Policy, driver fuel compensation rules, and Razorpay settlement timelines.',
+      'Official Cancellation, Refund, Goodwill Compensation, and Driver Wallet Policy for GO Partner Logistics website and mobile apps.',
     publisher: {
       '@id': `${SITE_URL}/#organization`,
     },
   };
 
   const handleDownload = () => {
-    const content = `GO PARTNER - CANCELLATION & REFUND POLICY
-Effective Date: November 2026
-URL: https://gopartner.in/refund
+    const content = `CANCELLATION & REFUND POLICY — GO PARTNER LOGISTICS (WEBSITE & MOBILE APPS)
 
-1. CANCELLATION BY CUSTOMER
-- Before Driver Acceptance: ₹0 Cancellation Fee. Customers may cancel freely at any time while the app status indicates "Searching for Driver".
-- After Driver Acceptance (Within 5 Minutes): Free cancellation. No fee is levied if canceled within 5 minutes of driver assignment.
-- After Driver Dispatched (> 5 Minutes / Driver Arrived at Pickup): A nominal fuel compensation fee of ₹50 is levied to compensate the driver for fuel consumed and travel time incurred.
+Effective Date: November 16, 2026
+Last Updated: November 16, 2026
+Platform Name: GO Partner Logistics ("GO Partner", "Platform", "We", "Us", "Our")
+Operating Entity: GO PARTNER SERVICES
+Applicable To: GO Partner Website, GO Partner Customer App, and GO Partner Driver App
 
-2. CANCELLATION BY DRIVER
-- Drivers who accept a trip request are expected to fulfill the service.
-- Unjustified cancellations cause automated account strikes in the dispatch system.
-- Multiple strikes result in temporary dispatch suspension or review under the Driver Partner Agreement.
-- Instant Auto-Reassignment: If a driver cancels, the customer's request is instantly re-routed to the next nearest available vehicle without any penalty or added fee to the customer.
+------------------------------------------------------------------------
+OVERVIEW & FAIR DISPATCH GUARANTEE
+This Cancellation & Refund Policy governs customer booking cancellations, driver goodwill compensations, wallet balance adjustments, platform commission rules, and digital refund processing for GO Partner Logistics.
+------------------------------------------------------------------------
 
-3. REFUND TIMELINES & METHODS
-- GO Wallet Deductions: Refunded instantly to the customer's GO Wallet balance.
-- Online UPI / Debit Cards / NetBanking: Processed securely via Razorpay directly back to the original source bank account within 2 to 4 business days.
-- Cash on Delivery (COD) Trips: Because payment is settled in cash only upon cargo unloading, no monetary refund is necessary.
+1. CANCELLATION BY CUSTOMER & GOODWILL COMPENSATION
+- Free Cancellation Before Driver Dispatch: ₹0 cancellation fee while your request is searching for nearby vehicles or before driver dispatch.
+- Customer-Side Cancellation Goodwill Compensation: If a Customer cancels due to a customer-side issue (such as wrong pickup location, wrong vehicle selected, goods not ready, or plan changed) AFTER the Driver has travelled 4 km or more toward the pickup location (or arrived at pickup), a Goodwill Compensation of ₹20 becomes eligible upon rebooking.
+- Zero Goodwill on Driver Fault: No goodwill compensation is charged if cancellation is caused by Driver delay, vehicle breakdown, or driver-side fault.
 
-4. GRIEVANCE & SUPPORT CONTACT
-Compliance & Grievance Desk, GO PARTNER
-Email: contact@gopartnerlogistics.in
-Helpline / WhatsApp: +91 81697 24736
-Jurisdiction: Mumbai, Maharashtra, India`;
+2. DRIVER PARTNER CANCELLATION RULES & DAILY LIMITS
+- Driver Daily Cancellation Limit: To ensure reliable service for Customers, Driver Partners are subject to a maximum of 2 driver-fault cancellations per calendar day (resetting at 12:00 AM), unless waived by Admin review. Once reached, new driver-fault cancellations are restricted for that day.
+- Automatic Order Reassignment: If a driver cancels, the customer's request is instantly re-routed to the next nearest available commercial vehicle at no added fee to the customer.
+- Anti-Circumvention Ban: Accepting a booking on GO Partner, arriving at pickup, cancelling on the app, and completing the trip privately for cash to bypass platform fees is strictly prohibited. Automated 3-Strike Anti-Fraud rules apply.
+
+3. VOLUNTARY FARE BOOST (PRIORITY EXTRA OFFER) POLICY
+- Optional Customer Fare Boost: Customers have the optional facility to voluntarily add an extra fare amount ("Extra Offer / Priority Boost") to encourage faster driver acceptance during busy periods.
+- 100% Optional & Non-Reversible: Adding this extra amount is completely voluntary. Once accepted by a driver and the trip has commenced, the boosted fare cannot be disputed or reversed.
+
+4. REFUND METHODS & PROCESSING TIMELINES
+- GO Wallet Balances: Deductions or credits are refunded instantly to your GO Wallet balance (0-60 seconds).
+- Digital Payments (UPI / NetBanking / Cards): Processed securely via RBI-licensed payment aggregators (such as Razorpay / Cashfree) back to the original source bank account within 2 to 4 business days.
+- Cash on Delivery (COD) Trips: Settle directly between Customer and Driver upon trip completion; no online refund is required.
+
+5. DRIVER WALLET COMMISSION & RECHARGE THRESHOLDS
+- Platform Commission: 5% on 2-Wheeler Bike/Scooter trips and 8% on Commercial Vehicle trips.
+- Cash Trip Dues Thresholds: Drivers must maintain wallet dues below their category threshold to accept new bookings:
+  * 2-Wheeler: ₹250 limit
+  * 3-Wheeler / Tempo: ₹400 limit
+  * Heavy Commercial Vehicles: ₹1,000 limit
+
+6. HIGHWAY TOLLS & WAITING TIME
+- Highway Tolls: Tolls displayed as "Toll Included / Toll Free on Road" are factored into quoted fares and reimbursed 100% to drivers under platform calculation rules.
+- Free Waiting Time: Standard 15 minutes free loading/unloading time applies at pickup and drop locations.
+
+7. GRIEVANCE REDRESSAL OFFICER & CONTACT
+In accordance with Indian Law, for any cancellation or refund dispute, contact:
+- Grievance Officer: Waris Khan
+- Entity Name: GO Partner Logistics (GO PARTNER SERVICES)
+- Legal & Compliance Email: wariskhan6786@gmail.com
+- Customer & Driver Support Email: support@gopartner.in / contact@gopartnerlogistics.in
+- Helpline Phone Number: +91 81697 24736
+- Registered Office Address: Mumbai MMR Logistics & Transport Hub, Mumbai, Maharashtra 400001, India
+
+© 2026 GO Partner Logistics (GO PARTNER SERVICES). All Rights Reserved.`;
 
     const element = document.createElement('a');
     const file = new Blob([content], { type: 'text/plain' });
     element.href = URL.createObjectURL(file);
-    element.download = 'GO-PARTNER-Cancellation-and-Refund-Policy.txt';
+    element.download = 'GO-Partner-Cancellation-and-Refund-Policy.txt';
     document.body.appendChild(element);
     element.click();
     document.body.removeChild(element);
@@ -82,11 +112,13 @@ Jurisdiction: Mumbai, Maharashtra, India`;
   };
 
   const sections = [
-    { id: 'customer-cancel', number: '01', title: 'Cancellation by Customer' },
-    { id: 'driver-cancel',   number: '02', title: 'Cancellation by Driver' },
-    { id: 'refund-timeline', number: '03', title: 'Refund Methods & Timelines' },
-    { id: 'disputes',        number: '04', title: 'Fare Disputes & Adjustments' },
-    { id: 'support',         number: '05', title: 'Support & Grievance Desk' },
+    { id: 'customer-cancel', number: '01', title: 'Customer Cancellations & Goodwill' },
+    { id: 'driver-cancel',   number: '02', title: 'Driver Cancellation Limits' },
+    { id: 'fare-boost',      number: '03', title: 'Voluntary Fare Boost Rules' },
+    { id: 'refund-timeline', number: '04', title: 'Refund Methods & Timelines' },
+    { id: 'wallet-rules',    number: '05', title: 'Driver Wallet & Commission' },
+    { id: 'tolls-waiting',   number: '06', title: 'Highway Tolls & Waiting Time' },
+    { id: 'grievance',       number: '07', title: 'Disputes & Grievance Desk' },
   ];
 
   return (
@@ -100,24 +132,26 @@ Jurisdiction: Mumbai, Maharashtra, India`;
         dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageJsonLd) }}
       />
 
-      {/* 1. HERO HEADER */}
+      {/* HERO HEADER */}
       <section className="bg-white border-b border-slate-200 py-10 lg:py-14">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <nav className="flex items-center space-x-2 text-xs text-slate-500 mb-3" aria-label="Breadcrumb">
-            <Link href="/" className="hover:text-brand-navy">
-              Home
-            </Link>
+            <Link href="/" className="hover:text-brand-navy">Home</Link>
             <span>/</span>
             <span className="text-slate-800 font-medium">Cancellation &amp; Refunds</span>
           </nav>
 
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
             <div>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-50 text-brand-orange text-xs font-bold border border-orange-200 mb-2">
+                <RefreshCw className="w-3.5 h-3.5" />
+                <span>Fair Dispatch &amp; Goodwill Protection Policy</span>
+              </div>
               <h1 className="text-3xl sm:text-4xl font-black text-brand-navy font-heading tracking-tight">
                 Cancellation &amp; Refund Policy
               </h1>
-              <p className="text-sm sm:text-base text-slate-600 mt-1">
-                Transparency builds stronger partnerships. Clear trip cancellation guidelines &amp; refund timelines.
+              <p className="text-sm sm:text-base text-slate-600 mt-1 max-w-2xl">
+                Transparent cancellation guidelines, ₹20 driver goodwill compensation, wallet dues limits, and refund processing timelines.
               </p>
             </div>
 
@@ -146,17 +180,32 @@ Jurisdiction: Mumbai, Maharashtra, India`;
         </div>
       </section>
 
-      {/* 2. MAIN CONTENT BODY */}
+      {/* QUICK SUMMARY BANNER */}
+      <section className="bg-brand-navy text-white py-3.5 px-4 shadow-inner">
+        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 text-center sm:text-left">
+          <div className="flex items-center gap-2.5">
+            <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0" />
+            <span className="text-xs sm:text-sm font-medium">
+              ₹0 cancellation while searching &bull; ₹20 Driver Goodwill protection on late customer cancellations &bull; Instant wallet refunds.
+            </span>
+          </div>
+          <span className="text-[11px] bg-white/10 px-2.5 py-0.5 rounded-full font-mono text-slate-300">
+            Effective: Nov 16, 2026
+          </span>
+        </div>
+      </section>
+
+      {/* MAIN CONTENT */}
       <section className="py-12 lg:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
-            {/* Left Sidebar Table of Contents (lg: 4 cols) */}
+
+            {/* Sticky Sidebar */}
             <div className="lg:col-span-4 space-y-6">
-              <div className="bg-white rounded-lg p-5 border border-slate-200 shadow-subtle sticky top-24">
-                {/* 3 Legal Documents Switcher */}
-                <div className="mb-6 pb-5 border-b border-slate-100">
-                  <span className="text-[11px] font-bold text-slate-400 uppercase tracking-widest block mb-2.5">
-                    Legal &amp; Compliance Pages
+              <div className="bg-white rounded-lg p-5 border border-slate-200 shadow-subtle sticky top-24 max-h-[calc(100vh-7rem)] overflow-y-auto">
+                <div className="mb-5 pb-4 border-b border-slate-100">
+                  <span className="text-[11px] font-bold text-slate-400 uppercase tracking-widest block mb-2">
+                    Legal &amp; Compliance Hub
                   </span>
                   <div className="space-y-1.5">
                     <Link
@@ -187,29 +236,28 @@ Jurisdiction: Mumbai, Maharashtra, India`;
                         <RefreshCw className="w-3.5 h-3.5" />
                         <span>Cancellation &amp; Refund</span>
                       </span>
-                      <span className="text-[10px] bg-white/20 px-1.5 py-0.5 rounded">Active</span>
+                      <span className="text-[10px] bg-white/20 px-1.5 py-0.5 rounded font-mono">Active</span>
                     </Link>
                   </div>
                 </div>
 
-                <span className="text-[11px] font-bold text-slate-400 uppercase tracking-widest block mb-3">
-                  Document Sections
+                <span className="text-[11px] font-bold text-slate-400 uppercase tracking-widest block mb-2.5">
+                  Policy Table of Contents
                 </span>
-                <nav className="space-y-1">
+                <nav className="space-y-1 text-xs">
                   {sections.map((sec) => (
                     <a
                       key={sec.id}
                       href={`#${sec.id}`}
-                      className="flex items-center gap-2.5 px-3 py-2 text-xs font-semibold text-slate-700 hover:text-brand-orange hover:bg-slate-50 rounded-md transition-colors"
+                      className="flex items-center gap-2 px-2.5 py-1.5 font-medium text-slate-600 hover:text-brand-orange hover:bg-slate-50 rounded transition-colors"
                     >
-                      <span className="font-mono text-slate-400 text-[11px]">{sec.number}</span>
-                      <span>{sec.title}</span>
+                      <span className="font-mono text-slate-400 text-[10px]">{sec.number}</span>
+                      <span className="truncate">{sec.title}</span>
                     </a>
                   ))}
                 </nav>
 
-                {/* Download Text Button */}
-                <div className="pt-5 mt-5 border-t border-slate-100">
+                <div className="pt-4 mt-4 border-t border-slate-100">
                   <button
                     type="button"
                     onClick={handleDownload}
@@ -218,306 +266,307 @@ Jurisdiction: Mumbai, Maharashtra, India`;
                     {downloadSuccess ? (
                       <>
                         <CheckCircle2 className="w-4 h-4" />
-                        <span>Downloaded</span>
+                        <span>Downloaded Plain Text</span>
                       </>
                     ) : (
                       <>
                         <Download className="w-4 h-4" />
-                        <span>Download Policy (TXT)</span>
+                        <span>Download Policy (.txt)</span>
                       </>
                     )}
                   </button>
                 </div>
 
-                {/* Need Clarification Card */}
-                <div className="mt-5 p-4 rounded-md bg-slate-50 border border-slate-200">
+                <div className="mt-4 p-3.5 rounded-md bg-slate-50 border border-slate-200">
                   <div className="flex items-center gap-2 text-brand-navy font-bold text-xs mb-1">
-                    <HelpCircle className="w-4 h-4 text-brand-blue" />
-                    <span>Cancellation Inquiries</span>
+                    <UserCheck className="w-4 h-4 text-brand-orange" />
+                    <span>Grievance Officer: Waris Khan</span>
                   </div>
-                  <p className="text-[11px] text-slate-500 mb-3 leading-relaxed">
-                    Have questions about an applied cancellation fee or trip refund? Our 24/7 support desk is ready to help.
+                  <p className="text-[11px] text-slate-500 mb-2 leading-relaxed">
+                    Formal statutory redressal under Indian Law. Acknowledged within 48 hours.
                   </p>
-                  <Link
-                    href="/contact"
-                    className="inline-flex items-center gap-1 text-xs font-bold text-brand-blue hover:text-brand-orange transition-colors"
+                  <a
+                    href="mailto:wariskhan6786@gmail.com"
+                    className="text-[11px] font-semibold text-brand-navy hover:text-brand-orange underline block truncate"
                   >
-                    <span>Contact Support</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </Link>
+                    wariskhan6786@gmail.com
+                  </a>
                 </div>
               </div>
             </div>
 
-            {/* Right Column: Policy Details (lg: 8 cols) */}
-            <div className="lg:col-span-8 bg-white rounded-lg p-8 sm:p-12 border border-slate-200 shadow-card space-y-10 text-slate-700">
-              {/* Notice Box */}
-              <div className="p-4 bg-orange-50/80 border-l-4 border-brand-orange rounded-r-md text-xs text-orange-950 leading-relaxed">
-                <span className="font-bold block mb-1">Policy Scope &amp; Purpose: Effective November 2026</span>
-                This Cancellation and Refund Policy applies to all on-demand and scheduled commercial goods transportation
-                bookings placed through the GO PARTNER customer mobile applications and web platform across Mumbai MMR and
-                Maharashtra. It balances fairness to shippers with fair compensation for independent commercial driver-partners.
+            {/* Document Body */}
+            <div className="lg:col-span-8 space-y-10">
+
+              {/* Meta Card */}
+              <div className="bg-white rounded-lg p-6 border border-slate-200 shadow-subtle">
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs">
+                  <div>
+                    <span className="text-slate-400 block font-mono text-[10px] uppercase">Effective Date</span>
+                    <span className="font-bold text-slate-800">November 16, 2026</span>
+                  </div>
+                  <div>
+                    <span className="text-slate-400 block font-mono text-[10px] uppercase">Operating Entity</span>
+                    <span className="font-bold text-slate-800">GO PARTNER SERVICES</span>
+                  </div>
+                  <div>
+                    <span className="text-slate-400 block font-mono text-[10px] uppercase">Goodwill Charge</span>
+                    <span className="font-bold text-slate-800">₹20 upon late rebooking</span>
+                  </div>
+                  <div>
+                    <span className="text-slate-400 block font-mono text-[10px] uppercase">Refund Turnaround</span>
+                    <span className="font-bold text-slate-800">Instant (Wallet) / 2-4d (Bank)</span>
+                  </div>
+                </div>
               </div>
 
-              {/* 01 Cancellation by Customer */}
-              <div id="customer-cancel" className="scroll-mt-24 space-y-4">
-                <div className="flex items-baseline gap-2">
-                  <span className="text-sm font-mono font-bold text-brand-orange">01.</span>
-                  <h2 className="text-xl font-bold text-brand-navy font-heading">
-                    Cancellation by Customer
+              {/* SECTION 1 */}
+              <article id="customer-cancel" className="bg-white rounded-lg p-6 sm:p-8 border border-slate-200 shadow-subtle space-y-4">
+                <div className="flex items-center gap-3">
+                  <span className="w-8 h-8 rounded-full bg-brand-navy text-white text-xs font-bold font-mono flex items-center justify-center flex-shrink-0">
+                    01
+                  </span>
+                  <h2 className="text-xl sm:text-2xl font-bold text-brand-navy font-heading">
+                    Customer Cancellations &amp; Goodwill Compensation
                   </h2>
                 </div>
-                <p className="text-sm leading-relaxed">
-                  We understand that logistics schedules and cargo dispatch timings can change unpredictably.
-                  Our cancellation policy is structured into three transparent time-based tiers:
+                <p className="text-sm text-slate-600 leading-relaxed">
+                  Customers may cancel a goods transport booking directly through the GO Partner App or website by selecting an accurate cancellation reason.
                 </p>
 
-                {/* 3 Tier Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
-                  {/* Tier 1 */}
-                  <div className="p-4 rounded-md border border-emerald-200 bg-emerald-50/50 flex flex-col justify-between">
-                    <div>
-                      <div className="flex items-center justify-between mb-2">
-                        <span className="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-emerald-100 text-emerald-800">
-                          Stage 1
-                        </span>
-                        <span className="text-base font-black text-emerald-700">₹0 Fee</span>
-                      </div>
-                      <h3 className="text-xs font-bold text-slate-800 mb-1">Before Driver Acceptance</h3>
-                      <p className="text-[11px] text-slate-600 leading-relaxed">
-                        Customers may cancel freely at any time while the application is in the <strong>&quot;Searching for Driver&quot;</strong> status.
-                      </p>
-                    </div>
-                    <div className="mt-3 pt-2 border-t border-emerald-200/60 flex items-center gap-1.5 text-[11px] text-emerald-700 font-medium">
-                      <CheckCircle2 className="w-3.5 h-3.5" />
-                      <span>100% Free Cancellation</span>
-                    </div>
+                <div className="space-y-3 text-xs">
+                  <div className="p-4 bg-emerald-50 border border-emerald-200 rounded-md">
+                    <strong className="text-emerald-900 block mb-1 text-sm">Free Cancellation Window (₹0 Fee)</strong>
+                    <span className="text-emerald-800">
+                      Cancellation is 100% free while the status displays &quot;Searching for Driver&quot; or before a Driver Partner has travelled toward the pickup location.
+                    </span>
                   </div>
 
-                  {/* Tier 2 */}
-                  <div className="p-4 rounded-md border border-blue-200 bg-blue-50/50 flex flex-col justify-between">
-                    <div>
-                      <div className="flex items-center justify-between mb-2">
-                        <span className="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-blue-100 text-blue-800">
-                          Stage 2
-                        </span>
-                        <span className="text-base font-black text-blue-700">₹0 Fee</span>
-                      </div>
-                      <h3 className="text-xs font-bold text-slate-800 mb-1">Within 5 Minutes of Acceptance</h3>
-                      <p className="text-[11px] text-slate-600 leading-relaxed">
-                        Free cancellation grace period applies within <strong>5 minutes</strong> of a commercial driver accepting your trip.
-                      </p>
-                    </div>
-                    <div className="mt-3 pt-2 border-t border-blue-200/60 flex items-center gap-1.5 text-[11px] text-blue-700 font-medium">
-                      <Clock className="w-3.5 h-3.5" />
-                      <span>5-Minute Grace Window</span>
-                    </div>
-                  </div>
-
-                  {/* Tier 3 */}
-                  <div className="p-4 rounded-md border border-amber-200 bg-amber-50/50 flex flex-col justify-between">
-                    <div>
-                      <div className="flex items-center justify-between mb-2">
-                        <span className="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-amber-100 text-amber-900">
-                          Stage 3
-                        </span>
-                        <span className="text-base font-black text-amber-800">₹50 Fee</span>
-                      </div>
-                      <h3 className="text-xs font-bold text-slate-800 mb-1">Driver Dispatched / Arrived</h3>
-                      <p className="text-[11px] text-slate-600 leading-relaxed">
-                        If canceled <strong>after 5 minutes</strong> or after the driver has reached the designated pickup dock.
-                      </p>
-                    </div>
-                    <div className="mt-3 pt-2 border-t border-amber-200/60 flex items-center gap-1.5 text-[11px] text-amber-800 font-medium">
-                      <Truck className="w-3.5 h-3.5" />
-                      <span>Direct Fuel Compensation</span>
-                    </div>
+                  <div className="p-4 bg-orange-50 border border-orange-200 rounded-md space-y-2">
+                    <strong className="text-brand-orange block text-sm">₹20 Driver Goodwill Compensation Rule</strong>
+                    <p className="text-slate-700">
+                      If a Customer cancels due to a customer-side issue (such as wrong pickup location, wrong vehicle selected, goods not ready, or change of plan) <strong>AFTER the Driver has travelled 4 km or more</strong> toward pickup (or arrived at pickup), a <strong>Goodwill Compensation of ₹20</strong> becomes eligible upon rebooking.
+                    </p>
+                    <p className="text-slate-600 text-[11px] italic">
+                      This nominal amount compensates the driver partner for fuel consumed and time spent navigating to the pickup point. No goodwill compensation is charged if cancellation was caused by driver delay or fault.
+                    </p>
                   </div>
                 </div>
+              </article>
 
-                <div className="p-3 bg-slate-50 border border-slate-200 rounded-md text-xs text-slate-600 leading-relaxed mt-2">
-                  <strong>Why is a ₹50 fee applied?</strong> Under GO PARTNER&apos;s 0% commission direct driver model,
-                  the ₹50 fee is credited entirely to the assigned driver partner to cover fuel expended and travel time
-                  invested heading towards your location.
-                </div>
-              </div>
-
-              {/* 02 Cancellation by Driver */}
-              <div id="driver-cancel" className="scroll-mt-24 space-y-4 pt-6 border-t border-slate-100">
-                <div className="flex items-baseline gap-2">
-                  <span className="text-sm font-mono font-bold text-brand-orange">02.</span>
-                  <h2 className="text-xl font-bold text-brand-navy font-heading">
-                    Cancellation by Driver
+              {/* SECTION 2 */}
+              <article id="driver-cancel" className="bg-white rounded-lg p-6 sm:p-8 border border-slate-200 shadow-subtle space-y-4">
+                <div className="flex items-center gap-3">
+                  <span className="w-8 h-8 rounded-full bg-brand-navy text-white text-xs font-bold font-mono flex items-center justify-center flex-shrink-0">
+                    02
+                  </span>
+                  <h2 className="text-xl sm:text-2xl font-bold text-brand-navy font-heading">
+                    Driver Cancellation Limits &amp; Reliability Rules
                   </h2>
                 </div>
-                <p className="text-sm leading-relaxed">
-                  Reliability is the foundation of the GO PARTNER logistics network. When a driver accepts a freight booking,
-                  they are expected to complete the assignment in full adherence to our service level agreement:
-                </p>
 
-                <div className="space-y-3">
-                  <div className="flex items-start gap-3 p-3.5 rounded-md bg-slate-50 border border-slate-200">
-                    <ShieldAlert className="w-4 h-4 text-brand-orange mt-0.5 shrink-0" />
-                    <div>
-                      <p className="text-xs font-bold text-slate-800">Automated Strike Mechanism</p>
-                      <p className="text-xs text-slate-600 mt-0.5 leading-relaxed">
-                        Unjustified driver cancellations trigger automated system strikes on the driver&apos;s account.
-                        Drivers accumulating repeated strikes within a rolling 7-day period face temporary dispatch suspension
-                        and mandatory fleet compliance review.
-                      </p>
-                    </div>
+                <div className="space-y-3 text-xs text-slate-600 leading-relaxed">
+                  <div className="p-4 bg-slate-50 border border-slate-200 rounded-md">
+                    <strong className="text-brand-navy block mb-1 text-sm">Driver Daily Cancellation Limit</strong>
+                    <p>
+                      To ensure dependable service for Customers, Driver Partners are subject to a daily cancellation limit: <strong>maximum 2 driver-fault cancellations per calendar day</strong> (resetting at 12:00 AM midnight), unless waived or reset upon Admin review. Once the limit is reached, further driver-fault cancellations are restricted for that day.
+                    </p>
                   </div>
 
-                  <div className="flex items-start gap-3 p-3.5 rounded-md bg-slate-50 border border-slate-200">
-                    <RefreshCw className="w-4 h-4 text-emerald-600 mt-0.5 shrink-0" />
-                    <div>
-                      <p className="text-xs font-bold text-slate-800">Zero-Impact Customer Re-Routing</p>
-                      <p className="text-xs text-slate-600 mt-0.5 leading-relaxed">
-                        If an assigned driver cancels due to an unforeseen breakdown or emergency, the customer order is
-                        <strong> instantly re-routed</strong> to the next nearest eligible commercial vehicle without any fee,
-                        price fluctuation, or manual action needed by the shipper.
-                      </p>
-                    </div>
+                  <div className="p-4 bg-slate-50 border border-slate-200 rounded-md">
+                    <strong className="text-brand-navy block mb-1 text-sm">Instant Auto-Reassignment</strong>
+                    <p>
+                      If an assigned driver cancels due to an emergency or vehicle issue, the customer&apos;s booking is instantly re-routed to the next nearest available commercial vehicle at no penalty or extra fee.
+                    </p>
+                  </div>
+
+                  <div className="p-4 bg-red-50 border border-red-200 rounded-md text-red-900">
+                    <strong className="block mb-1 text-sm">Anti-Circumvention &amp; Private Trip Ban (3-Strike System)</strong>
+                    <p>
+                      Accepting a booking on GO Partner, arriving at pickup, cancelling the order on the app, and completing the trip privately for cash to bypass platform fees is strictly prohibited. Our automated <strong>3-Strike Anti-Fraud system</strong> enforces warnings, penalties, or permanent account ban.
+                    </p>
                   </div>
                 </div>
-              </div>
+              </article>
 
-              {/* 03 Refund Timelines */}
-              <div id="refund-timeline" className="scroll-mt-24 space-y-4 pt-6 border-t border-slate-100">
-                <div className="flex items-baseline gap-2">
-                  <span className="text-sm font-mono font-bold text-brand-orange">03.</span>
-                  <h2 className="text-xl font-bold text-brand-navy font-heading">
+              {/* SECTION 3 */}
+              <article id="fare-boost" className="bg-white rounded-lg p-6 sm:p-8 border border-slate-200 shadow-subtle space-y-4">
+                <div className="flex items-center gap-3">
+                  <span className="w-8 h-8 rounded-full bg-brand-orange text-white text-xs font-bold font-mono flex items-center justify-center flex-shrink-0">
+                    03
+                  </span>
+                  <h2 className="text-xl sm:text-2xl font-bold text-brand-navy font-heading">
+                    Voluntary Customer Fare Boost (Priority Extra Offer)
+                  </h2>
+                </div>
+                <div className="p-4 bg-slate-50 border border-slate-200 rounded-md text-xs text-slate-700 leading-relaxed space-y-2">
+                  <p>
+                    If nearby Driver Partners are busy or have not yet accepted a pending order, the Customer has the optional facility to voluntarily add an extra fare amount (<strong>&quot;Extra Offer / Priority Boost&quot;</strong>) at their sole discretion to encourage faster driver acceptance.
+                  </p>
+                  <p className="font-semibold text-brand-navy">
+                    Adding this extra amount is 100% voluntary and never mandatory. Once added by the Customer and accepted by a Driver Partner, the boosted amount becomes part of the agreed final fare (subject to platform commission) and cannot be disputed or reversed once the trip starts.
+                  </p>
+                </div>
+              </article>
+
+              {/* SECTION 4 */}
+              <article id="refund-timeline" className="bg-white rounded-lg p-6 sm:p-8 border border-slate-200 shadow-subtle space-y-4">
+                <div className="flex items-center gap-3">
+                  <span className="w-8 h-8 rounded-full bg-brand-navy text-white text-xs font-bold font-mono flex items-center justify-center flex-shrink-0">
+                    04
+                  </span>
+                  <h2 className="text-xl sm:text-2xl font-bold text-brand-navy font-heading">
                     Refund Methods &amp; Processing Timelines
                   </h2>
                 </div>
-                <p className="text-sm leading-relaxed">
-                  Whenever an order qualifies for a full or partial refund (for instance, following a pre-paid cancellation
-                  prior to dispatch or a fare adjustment), funds are returned based on the original payment method:
-                </p>
 
-                {/* Refund Table */}
-                <div className="border border-slate-200 rounded-md overflow-hidden">
-                  <table className="w-full text-left border-collapse text-xs">
-                    <thead>
-                      <tr className="bg-slate-100 text-slate-700 font-bold border-b border-slate-200">
-                        <th className="py-2.5 px-4">Payment Method</th>
-                        <th className="py-2.5 px-4">Refund Destination</th>
-                        <th className="py-2.5 px-4">Settlement Window</th>
-                        <th className="py-2.5 px-4">Processing Partner</th>
-                      </tr>
-                    </thead>
-                    <tbody className="divide-y divide-slate-100 text-slate-600">
-                      <tr>
-                        <td className="py-3 px-4 font-semibold text-slate-800 flex items-center gap-2">
-                          <Wallet className="w-4 h-4 text-brand-orange" />
-                          <span>GO Wallet Balance</span>
-                        </td>
-                        <td className="py-3 px-4">Customer In-App Wallet</td>
-                        <td className="py-3 px-4 text-emerald-700 font-bold">Instant (0-60 Seconds)</td>
-                        <td className="py-3 px-4">GO PARTNER Core Engine</td>
-                      </tr>
-                      <tr>
-                        <td className="py-3 px-4 font-semibold text-slate-800 flex items-center gap-2">
-                          <CreditCard className="w-4 h-4 text-brand-blue" />
-                          <span>UPI / Debit Cards / NetBanking</span>
-                        </td>
-                        <td className="py-3 px-4">Original Source Bank Account</td>
-                        <td className="py-3 px-4 text-slate-800 font-bold">2 to 4 Business Days</td>
-                        <td className="py-3 px-4">Razorpay (RBI-Authorized)</td>
-                      </tr>
-                      <tr>
-                        <td className="py-3 px-4 font-semibold text-slate-800 flex items-center gap-2">
-                          <IndianRupee className="w-4 h-4 text-slate-500" />
-                          <span>Cash on Delivery (COD)</span>
-                        </td>
-                        <td className="py-3 px-4">N/A (Paid only upon delivery)</td>
-                        <td className="py-3 px-4">Immediate</td>
-                        <td className="py-3 px-4">Driver Partner Direct</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+                  <div className="p-3.5 bg-slate-50 border border-slate-200 rounded-md">
+                    <strong className="text-brand-navy block mb-1">GO Wallet Balance</strong>
+                    <span className="font-mono text-emerald-600 font-bold block mb-1">Instant (0–60 seconds)</span>
+                    <span className="text-slate-600">Wallet balance deductions are credited back instantly to your in-app wallet upon valid cancellation.</span>
+                  </div>
 
-                <div className="p-3 bg-blue-50 border border-blue-100 rounded-md text-xs text-blue-900 leading-relaxed">
-                  <strong>Razorpay Gateway Processing:</strong> Bank processing times can vary depending on clearing house
-                  schedules (NEFT/IMPS) and banking holidays. If a refund is not reflected after 4 working days, our support
-                  desk can issue the formal Razorpay RRN / UTR reference number for easy bank tracing.
-                </div>
-              </div>
+                  <div className="p-3.5 bg-slate-50 border border-slate-200 rounded-md">
+                    <strong className="text-brand-navy block mb-1">UPI &amp; NetBanking</strong>
+                    <span className="font-mono text-brand-orange font-bold block mb-1">2 to 4 Business Days</span>
+                    <span className="text-slate-600">Processed securely through RBI-licensed payment gateways back to the original bank account.</span>
+                  </div>
 
-              {/* 04 Fare Disputes */}
-              <div id="disputes" className="scroll-mt-24 space-y-4 pt-6 border-t border-slate-100">
-                <div className="flex items-baseline gap-2">
-                  <span className="text-sm font-mono font-bold text-brand-orange">04.</span>
-                  <h2 className="text-xl font-bold text-brand-navy font-heading">
-                    Fare Disputes &amp; Adjustments
-                  </h2>
-                </div>
-                <p className="text-sm leading-relaxed">
-                  If you believe a cancellation fee was levied erroneously (such as if a driver marked &quot;Arrived&quot;
-                  while significantly away from the GPS pickup point, or if significant driver delay prompted the cancellation),
-                  you may raise a dispute within <strong>48 hours</strong> of the trip timestamp.
-                </p>
-                <div className="bg-slate-50 p-4 rounded-md border border-slate-200 text-xs space-y-2 text-slate-600">
-                  <p className="font-semibold text-slate-800">Our Dispute Review Protocol:</p>
-                  <ul className="list-disc pl-5 space-y-1">
-                    <li>Our team reviews the vehicle GPS telemetry logs and timestamp records.</li>
-                    <li>If driver delay exceeding 15 minutes past ETA is verified, any fee levied is reversed immediately.</li>
-                    <li>Reversed amounts are credited directly to your GO Wallet with notification via SMS.</li>
-                  </ul>
-                </div>
-              </div>
-
-              {/* 05 Support & Grievance Desk */}
-              <div id="support" className="scroll-mt-24 space-y-4 pt-6 border-t border-slate-100">
-                <div className="flex items-baseline gap-2">
-                  <span className="text-sm font-mono font-bold text-brand-orange">05.</span>
-                  <h2 className="text-xl font-bold text-brand-navy font-heading">
-                    Support &amp; Grievance Desk
-                  </h2>
-                </div>
-                <p className="text-sm leading-relaxed">
-                  For trip cancellations, refund status queries, or escalation requests, reach our dedicated compliance desk:
-                </p>
-                <div className="bg-slate-50 p-5 rounded-md border border-slate-200 space-y-2 text-xs">
-                  <p className="font-bold text-brand-navy text-sm">Customer Support &amp; Grievance Office</p>
-                  <p className="text-slate-700 font-semibold">GO PARTNER Logistics Network</p>
-                  <div className="pt-2 space-y-1.5">
-                    <p>
-                      <span className="text-slate-500 font-medium">Email: </span>
-                      <a href="mailto:contact@gopartnerlogistics.in" className="text-brand-orange underline underline-offset-2">
-                        contact@gopartnerlogistics.in
-                      </a>
-                    </p>
-                    <p>
-                      <span className="text-slate-500 font-medium">Helpline: </span>
-                      <a href="tel:+918169724736" className="text-brand-navy font-semibold">
-                        +91 81697 24736
-                      </a>
-                    </p>
-                    <p>
-                      <span className="text-slate-500 font-medium">WhatsApp Support: </span>
-                      <a
-                        href={WHATSAPP_URL}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-emerald-700 underline underline-offset-2 font-semibold"
-                      >
-                        {WHATSAPP_PHONE} (Message Only)
-                      </a>
-                    </p>
-                    <p>
-                      <span className="text-slate-500 font-medium">Operating Hours: </span>
-                      24 Hours / 7 Days Active Dispatch &amp; Support
-                    </p>
-                    <p>
-                      <span className="text-slate-500 font-medium">Jurisdiction: </span>
-                      Mumbai, Maharashtra, India
-                    </p>
+                  <div className="p-3.5 bg-slate-50 border border-slate-200 rounded-md">
+                    <strong className="text-brand-navy block mb-1">Cash on Delivery (COD)</strong>
+                    <span className="font-mono text-slate-700 font-bold block mb-1">Zero Monetary Exchange</span>
+                    <span className="text-slate-600">Cash trips are settled in person only upon cargo delivery; canceled cash trips require no monetary refund.</span>
                   </div>
                 </div>
-              </div>
+              </article>
+
+              {/* SECTION 5 */}
+              <article id="wallet-rules" className="bg-white rounded-lg p-6 sm:p-8 border border-slate-200 shadow-subtle space-y-4">
+                <div className="flex items-center gap-3">
+                  <span className="w-8 h-8 rounded-full bg-brand-navy text-white text-xs font-bold font-mono flex items-center justify-center flex-shrink-0">
+                    05
+                  </span>
+                  <h2 className="text-xl sm:text-2xl font-bold text-brand-navy font-heading">
+                    Driver Wallet Rules, Joining Fee &amp; Commission
+                  </h2>
+                </div>
+
+                <div className="space-y-3 text-xs text-slate-600 leading-relaxed">
+                  <div className="p-3.5 bg-slate-50 border border-slate-200 rounded-md">
+                    <strong className="text-brand-navy block mb-1">Joining Fee &amp; Commission Tariff</strong>
+                    <ul className="list-disc list-inside space-y-1">
+                      <li>One-time Driver registration/joining fee: currently ₹100.</li>
+                      <li>Platform Service Commission: <strong>5% on 2-Wheeler Bike/Scooter trips</strong> and <strong>8% on Commercial Vehicles</strong>.</li>
+                    </ul>
+                  </div>
+
+                  <div className="p-3.5 bg-slate-50 border border-slate-200 rounded-md">
+                    <strong className="text-brand-navy block mb-1">Cash Trip Dues &amp; Wallet Limits</strong>
+                    <p className="mb-2">For cash-collected trips, commission is debited from the Driver&apos;s wallet balance. Drivers must keep dues below their vehicle limit by recharging:</p>
+                    <div className="grid grid-cols-3 gap-2 text-center font-medium">
+                      <div className="p-2 bg-white rounded border border-slate-200">
+                        <span className="block text-brand-navy">2-Wheeler</span>
+                        <span className="font-mono text-brand-orange font-bold">₹250 limit</span>
+                      </div>
+                      <div className="p-2 bg-white rounded border border-slate-200">
+                        <span className="block text-brand-navy">3-Wheeler / Tempo</span>
+                        <span className="font-mono text-brand-orange font-bold">₹400 limit</span>
+                      </div>
+                      <div className="p-2 bg-white rounded border border-slate-200">
+                        <span className="block text-brand-navy">Heavy Commercial</span>
+                        <span className="font-mono text-brand-orange font-bold">₹1,000 limit</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              {/* SECTION 6 */}
+              <article id="tolls-waiting" className="bg-white rounded-lg p-6 sm:p-8 border border-slate-200 shadow-subtle space-y-4">
+                <div className="flex items-center gap-3">
+                  <span className="w-8 h-8 rounded-full bg-brand-navy text-white text-xs font-bold font-mono flex items-center justify-center flex-shrink-0">
+                    06
+                  </span>
+                  <h2 className="text-xl sm:text-2xl font-bold text-brand-navy font-heading">
+                    Highway Tolls &amp; Loading Waiting Time
+                  </h2>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+                  <div className="p-3.5 bg-slate-50 border border-slate-200 rounded-md">
+                    <strong className="text-brand-navy block mb-1">Highway Toll Inclusions</strong>
+                    <span className="text-slate-600">Where marked &quot;Toll Included / Toll Free on Road&quot;, applicable highway tolls are already factored into the booking fare and reimbursed 100% to drivers.</span>
+                  </div>
+                  <div className="p-3.5 bg-slate-50 border border-slate-200 rounded-md">
+                    <strong className="text-brand-navy block mb-1">Free Waiting Time</strong>
+                    <span className="text-slate-600">Standard 15 minutes free loading and unloading waiting time applies. Extended delays beyond this threshold may incur displayed waiting charges.</span>
+                  </div>
+                </div>
+              </article>
+
+              {/* SECTION 7 */}
+              <article id="grievance" className="bg-white rounded-lg p-6 sm:p-8 border border-slate-200 shadow-subtle space-y-5">
+                <div className="flex items-center gap-3">
+                  <span className="w-8 h-8 rounded-full bg-brand-navy text-white text-xs font-bold font-mono flex items-center justify-center flex-shrink-0">
+                    07
+                  </span>
+                  <h2 className="text-xl sm:text-2xl font-bold text-brand-navy font-heading">
+                    Disputes &amp; Grievance Redressal Desk
+                  </h2>
+                </div>
+                <p className="text-xs text-slate-600 leading-relaxed">
+                  For any billing dispute, incorrect cancellation charge, or refund inquiry, our dedicated compliance and grievance desk is available:
+                </p>
+
+                <div className="bg-slate-50 border border-slate-200 rounded-md p-5 text-xs space-y-3">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <span className="text-slate-400 block font-mono text-[10px] uppercase">Grievance Officer</span>
+                      <span className="font-bold text-slate-800 text-sm">Waris Khan</span>
+                    </div>
+                    <div>
+                      <span className="text-slate-400 block font-mono text-[10px] uppercase">Operating Entity</span>
+                      <span className="font-bold text-slate-800">GO Partner Logistics (GO PARTNER SERVICES)</span>
+                    </div>
+                    <div>
+                      <span className="text-slate-400 block font-mono text-[10px] uppercase">Legal &amp; Compliance Email</span>
+                      <a href="mailto:wariskhan6786@gmail.com" className="font-bold text-brand-navy hover:underline">
+                        wariskhan6786@gmail.com
+                      </a>
+                    </div>
+                    <div>
+                      <span className="text-slate-400 block font-mono text-[10px] uppercase">Customer &amp; Driver Support</span>
+                      <a href="mailto:support@gopartner.in" className="font-bold text-brand-navy hover:underline">
+                        support@gopartner.in
+                      </a>
+                    </div>
+                    <div>
+                      <span className="text-slate-400 block font-mono text-[10px] uppercase">Helpline Phone</span>
+                      <a href={`tel:${CONTACT_PHONE_RAW}`} className="font-bold text-brand-navy hover:underline">
+                        {CONTACT_PHONE}
+                      </a>
+                    </div>
+                    <div>
+                      <span className="text-slate-400 block font-mono text-[10px] uppercase">Jurisdiction</span>
+                      <span className="font-bold text-slate-800">Mumbai, Maharashtra, India</span>
+                    </div>
+                  </div>
+
+                  <div className="pt-3 border-t border-slate-200">
+                    <span className="text-slate-400 block font-mono text-[10px] uppercase">Registered Office Address</span>
+                    <span className="font-medium text-slate-700">
+                      Mumbai MMR Logistics &amp; Transport Hub, Mumbai, Maharashtra 400001, India
+                    </span>
+                  </div>
+                </div>
+
+                <div className="text-center pt-4 text-xs text-slate-400 border-t border-slate-100">
+                  &copy; 2026 GO Partner Logistics (GO PARTNER SERVICES). All Rights Reserved.
+                </div>
+              </article>
+
             </div>
+
           </div>
         </div>
       </section>

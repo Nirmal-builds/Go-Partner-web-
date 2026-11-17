@@ -2,19 +2,19 @@ import type { Metadata } from 'next';
 import { constructMetadata } from '@/lib/seo';
 
 export const metadata: Metadata = constructMetadata({
-  title: 'Privacy Policy | Data Protection & Geolocation Transparency',
+  title: 'Privacy Policy | DPDP Act 2023 & Google Play Compliance',
   description:
-    'Read the GO-PARTNER Privacy Policy. Learn how we collect, store, and safeguard customer and driver-partner data in accordance with the Information Technology Act 2000.',
+    'Read the official GO Partner Logistics Privacy Policy for website, Customer App, and Driver App. Fully compliant with DPDP Act 2023, IT Act 2000, and Google Play Policies.',
   path: '/privacy-policy',
   image: '/images/hero-indian-partner.jpg',
-  imageAlt: 'GO-PARTNER Data Protection and Privacy Standards',
+  imageAlt: 'GO Partner Logistics Data Protection and Privacy Standards',
   keywords: [
-    'GO-PARTNER privacy policy',
-    'logistics data protection',
-    'GPS telemetry privacy',
+    'GO Partner Logistics privacy policy',
+    'DPDP Act 2023 compliance',
+    'Google Play background location disclosure',
+    'logistics data protection India',
     'driver KYC policy',
-    'IT Act 2000 compliance',
-    'goods transport privacy policy India',
+    'goods transport privacy policy',
   ],
 });
 

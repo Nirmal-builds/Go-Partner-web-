@@ -21,7 +21,9 @@ export const SITE_URL =
 export const CONTACT_PHONE = '+91 81697 24736';
 export const CONTACT_PHONE_RAW = '+918169724736';
 export const CONTACT_EMAIL = 'contact@gopartnerlogistics.in';
-export const GRIEVANCE_EMAIL = 'contact@gopartnerlogistics.in';
+export const SUPPORT_EMAIL = 'support@gopartner.in';
+export const GRIEVANCE_OFFICER = 'Waris Khan';
+export const GRIEVANCE_EMAIL = 'wariskhan6786@gmail.com';
 
 export const WHATSAPP_PHONE = '+91 81697 24736';
 export const WHATSAPP_PHONE_RAW = '918169724736';
